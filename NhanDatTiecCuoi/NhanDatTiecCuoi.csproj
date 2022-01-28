@@ -46,16 +46,77 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmNhanDatTiecCuoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmNhanDatTiecCuoi.Designer.cs">
+      <DependentUpon>frmNhanDatTiecCuoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationUserControl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UserControls\ucDanhSachCa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucDanhSachCa.Designer.cs">
+      <DependentUpon>ucDanhSachCa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucDanhSachCacLoaiSanh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucDanhSachCacLoaiSanh.Designer.cs">
+      <DependentUpon>ucDanhSachCacLoaiSanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucDanhSachDichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucDanhSachDichVu.Designer.cs">
+      <DependentUpon>ucDanhSachDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucDanhSachSanh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucDanhSachSanh.Designer.cs">
+      <DependentUpon>ucDanhSachSanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucDanhSachTiecCuoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucDanhSachTiecCuoi.Designer.cs">
+      <DependentUpon>ucDanhSachTiecCuoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucDatTiecCuoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucDatTiecCuoi.Designer.cs">
+      <DependentUpon>ucDatTiecCuoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucDoanhThuThang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucDoanhThuThang.Designer.cs">
+      <DependentUpon>ucDoanhThuThang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucHoaDon.Designer.cs">
+      <DependentUpon>ucHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucThayDoiQuyDinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucThayDoiQuyDinh.Designer.cs">
+      <DependentUpon>ucThayDoiQuyDinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucThongTinMonAn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucThongTinMonAn.Designer.cs">
+      <DependentUpon>ucThongTinMonAn.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmNhanDatTiecCuoi.resx">
+      <DependentUpon>frmNhanDatTiecCuoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +127,36 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\ucDanhSachCa.resx">
+      <DependentUpon>ucDanhSachCa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucDanhSachCacLoaiSanh.resx">
+      <DependentUpon>ucDanhSachCacLoaiSanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucDanhSachDichVu.resx">
+      <DependentUpon>ucDanhSachDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucDanhSachSanh.resx">
+      <DependentUpon>ucDanhSachSanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucDanhSachTiecCuoi.resx">
+      <DependentUpon>ucDanhSachTiecCuoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucDatTiecCuoi.resx">
+      <DependentUpon>ucDatTiecCuoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucDoanhThuThang.resx">
+      <DependentUpon>ucDoanhThuThang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucHoaDon.resx">
+      <DependentUpon>ucHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucThayDoiQuyDinh.resx">
+      <DependentUpon>ucThayDoiQuyDinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucThongTinMonAn.resx">
+      <DependentUpon>ucThongTinMonAn.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -36,19 +36,19 @@ namespace NhanDatTiecCuoi
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmiDashboard = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSanh = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTiecCuoi = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTaiChinh = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiQuyDinh = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDanhSachCa = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDanhSachSanh = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDanhSachCacLoaiSanh = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTiecCuoi = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDatTiecCuoi = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDanhSachDatTiecCuoi = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDanhSachCacLoaiSanh = new System.Windows.Forms.ToolStripMenuItem();
             this.tieccuoiToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiDanhSachCa = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiThongTinMonAn = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDanhSachDichVu = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTaiChinh = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHoaDon = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDoanhThuThang = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiQuyDinh = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiThayDoiQuyDinh = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -68,7 +68,7 @@ namespace NhanDatTiecCuoi
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1238, 794);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1238, 844);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -77,7 +77,7 @@ namespace NhanDatTiecCuoi
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 26);
+            this.label1.Location = new System.Drawing.Point(21, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 25);
@@ -92,11 +92,11 @@ namespace NhanDatTiecCuoi
             this.tableLayoutPanel2.Controls.Add(this.pnPage, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.menuStrip1, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 70);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 55);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1232, 720);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1230, 785);
             this.tableLayoutPanel2.TabIndex = 0;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
@@ -104,16 +104,15 @@ namespace NhanDatTiecCuoi
             // 
             this.pnPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnPage.Location = new System.Drawing.Point(187, 3);
+            this.pnPage.Location = new System.Drawing.Point(153, 3);
             this.pnPage.Name = "pnPage";
-            this.pnPage.Size = new System.Drawing.Size(1040, 720);
+            this.pnPage.Size = new System.Drawing.Size(1074, 779);
             this.pnPage.TabIndex = 0;
             this.pnPage.Paint += new System.Windows.Forms.PaintEventHandler(this.pnPage_Paint);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiDashboard,
@@ -124,7 +123,7 @@ namespace NhanDatTiecCuoi
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(246, 151);
+            this.menuStrip1.Size = new System.Drawing.Size(122, 785);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -132,9 +131,10 @@ namespace NhanDatTiecCuoi
             // tsmiDashboard
             // 
             this.tsmiDashboard.Name = "tsmiDashboard";
-            this.tsmiDashboard.Size = new System.Drawing.Size(173, 29);
+            this.tsmiDashboard.Size = new System.Drawing.Size(109, 29);
             this.tsmiDashboard.Text = "Dashboard";
             this.tsmiDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiDashboard.Click += new System.EventHandler(this.tsmiDashboard_Click);
             // 
             // tsmiSanh
             // 
@@ -142,9 +142,23 @@ namespace NhanDatTiecCuoi
             this.tsmiDanhSachSanh,
             this.tsmiDanhSachCacLoaiSanh});
             this.tsmiSanh.Name = "tsmiSanh";
-            this.tsmiSanh.Size = new System.Drawing.Size(173, 29);
+            this.tsmiSanh.Size = new System.Drawing.Size(109, 29);
             this.tsmiSanh.Text = "Sảnh";
             this.tsmiSanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tsmiDanhSachSanh
+            // 
+            this.tsmiDanhSachSanh.Name = "tsmiDanhSachSanh";
+            this.tsmiDanhSachSanh.Size = new System.Drawing.Size(301, 34);
+            this.tsmiDanhSachSanh.Text = "Danh sách sảnh";
+            this.tsmiDanhSachSanh.Click += new System.EventHandler(this.tsmiDanhSachSanh_Click);
+            // 
+            // tsmiDanhSachCacLoaiSanh
+            // 
+            this.tsmiDanhSachCacLoaiSanh.Name = "tsmiDanhSachCacLoaiSanh";
+            this.tsmiDanhSachCacLoaiSanh.Size = new System.Drawing.Size(301, 34);
+            this.tsmiDanhSachCacLoaiSanh.Text = "Danh sách các loại sảnh";
+            this.tsmiDanhSachCacLoaiSanh.Click += new System.EventHandler(this.tsmiDanhSachCacLoaiSanh_Click);
             // 
             // tsmiTiecCuoi
             // 
@@ -156,9 +170,49 @@ namespace NhanDatTiecCuoi
             this.tsmiThongTinMonAn,
             this.tsmiDanhSachDichVu});
             this.tsmiTiecCuoi.Name = "tsmiTiecCuoi";
-            this.tsmiTiecCuoi.Size = new System.Drawing.Size(173, 29);
+            this.tsmiTiecCuoi.Size = new System.Drawing.Size(109, 29);
             this.tsmiTiecCuoi.Text = "Tiệc cưới";
             this.tsmiTiecCuoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tsmiDatTiecCuoi
+            // 
+            this.tsmiDatTiecCuoi.Name = "tsmiDatTiecCuoi";
+            this.tsmiDatTiecCuoi.Size = new System.Drawing.Size(298, 34);
+            this.tsmiDatTiecCuoi.Text = "Đặt tiệc cưới";
+            this.tsmiDatTiecCuoi.Click += new System.EventHandler(this.tsmiDatTiecCuoi_Click);
+            // 
+            // tsmiDanhSachDatTiecCuoi
+            // 
+            this.tsmiDanhSachDatTiecCuoi.Name = "tsmiDanhSachDatTiecCuoi";
+            this.tsmiDanhSachDatTiecCuoi.Size = new System.Drawing.Size(298, 34);
+            this.tsmiDanhSachDatTiecCuoi.Text = "Danh sách đặt tiệc cưới";
+            this.tsmiDanhSachDatTiecCuoi.Click += new System.EventHandler(this.tsmiDanhSachDatTiecCuoi_Click);
+            // 
+            // tieccuoiToolStripMenuItem
+            // 
+            this.tieccuoiToolStripMenuItem.Name = "tieccuoiToolStripMenuItem";
+            this.tieccuoiToolStripMenuItem.Size = new System.Drawing.Size(295, 6);
+            // 
+            // tsmiDanhSachCa
+            // 
+            this.tsmiDanhSachCa.Name = "tsmiDanhSachCa";
+            this.tsmiDanhSachCa.Size = new System.Drawing.Size(298, 34);
+            this.tsmiDanhSachCa.Text = "Danh sách ca";
+            this.tsmiDanhSachCa.Click += new System.EventHandler(this.tsmiDanhSachCa_Click);
+            // 
+            // tsmiThongTinMonAn
+            // 
+            this.tsmiThongTinMonAn.Name = "tsmiThongTinMonAn";
+            this.tsmiThongTinMonAn.Size = new System.Drawing.Size(298, 34);
+            this.tsmiThongTinMonAn.Text = "Thông tin món ăn";
+            this.tsmiThongTinMonAn.Click += new System.EventHandler(this.tsmiThongTinMonAn_Click);
+            // 
+            // tsmiDanhSachDichVu
+            // 
+            this.tsmiDanhSachDichVu.Name = "tsmiDanhSachDichVu";
+            this.tsmiDanhSachDichVu.Size = new System.Drawing.Size(298, 34);
+            this.tsmiDanhSachDichVu.Text = "Danh sách dịch vụ";
+            this.tsmiDanhSachDichVu.Click += new System.EventHandler(this.tsmiDanhSachDichVu_Click);
             // 
             // tsmiTaiChinh
             // 
@@ -166,89 +220,45 @@ namespace NhanDatTiecCuoi
             this.tsmiHoaDon,
             this.tsmiDoanhThuThang});
             this.tsmiTaiChinh.Name = "tsmiTaiChinh";
-            this.tsmiTaiChinh.Size = new System.Drawing.Size(173, 29);
+            this.tsmiTaiChinh.Size = new System.Drawing.Size(109, 29);
             this.tsmiTaiChinh.Text = "Tài chính";
             this.tsmiTaiChinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tsmiHoaDon
+            // 
+            this.tsmiHoaDon.Name = "tsmiHoaDon";
+            this.tsmiHoaDon.Size = new System.Drawing.Size(249, 34);
+            this.tsmiHoaDon.Text = "Hóa đơn";
+            this.tsmiHoaDon.Click += new System.EventHandler(this.tsmiHoaDon_Click);
+            // 
+            // tsmiDoanhThuThang
+            // 
+            this.tsmiDoanhThuThang.Name = "tsmiDoanhThuThang";
+            this.tsmiDoanhThuThang.Size = new System.Drawing.Size(249, 34);
+            this.tsmiDoanhThuThang.Text = "Doanh thu tháng";
+            this.tsmiDoanhThuThang.Click += new System.EventHandler(this.tsmiDoanhThuThang_Click);
             // 
             // tsmiQuyDinh
             // 
             this.tsmiQuyDinh.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiThayDoiQuyDinh});
             this.tsmiQuyDinh.Name = "tsmiQuyDinh";
-            this.tsmiQuyDinh.Size = new System.Drawing.Size(173, 29);
+            this.tsmiQuyDinh.Size = new System.Drawing.Size(109, 29);
             this.tsmiQuyDinh.Text = "Quy định";
             this.tsmiQuyDinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tsmiDanhSachCa
-            // 
-            this.tsmiDanhSachCa.Name = "tsmiDanhSachCa";
-            this.tsmiDanhSachCa.Size = new System.Drawing.Size(298, 34);
-            this.tsmiDanhSachCa.Text = "Danh sách ca";
-            // 
-            // tsmiDanhSachSanh
-            // 
-            this.tsmiDanhSachSanh.Name = "tsmiDanhSachSanh";
-            this.tsmiDanhSachSanh.Size = new System.Drawing.Size(301, 34);
-            this.tsmiDanhSachSanh.Text = "Danh sách sảnh";
-            // 
-            // tsmiDatTiecCuoi
-            // 
-            this.tsmiDatTiecCuoi.Name = "tsmiDatTiecCuoi";
-            this.tsmiDatTiecCuoi.Size = new System.Drawing.Size(298, 34);
-            this.tsmiDatTiecCuoi.Text = "Đặt tiệc cưới";
-            // 
-            // tsmiDanhSachDatTiecCuoi
-            // 
-            this.tsmiDanhSachDatTiecCuoi.Name = "tsmiDanhSachDatTiecCuoi";
-            this.tsmiDanhSachDatTiecCuoi.Size = new System.Drawing.Size(298, 34);
-            this.tsmiDanhSachDatTiecCuoi.Text = "Danh sách đặt tiệc cưới";
-            // 
-            // tsmiDanhSachCacLoaiSanh
-            // 
-            this.tsmiDanhSachCacLoaiSanh.Name = "tsmiDanhSachCacLoaiSanh";
-            this.tsmiDanhSachCacLoaiSanh.Size = new System.Drawing.Size(301, 34);
-            this.tsmiDanhSachCacLoaiSanh.Text = "Danh sách các loại sảnh";
-            // 
-            // tieccuoiToolStripMenuItem
-            // 
-            this.tieccuoiToolStripMenuItem.Name = "tieccuoiToolStripMenuItem";
-            this.tieccuoiToolStripMenuItem.Size = new System.Drawing.Size(295, 6);
-            // 
-            // tsmiThongTinMonAn
-            // 
-            this.tsmiThongTinMonAn.Name = "tsmiThongTinMonAn";
-            this.tsmiThongTinMonAn.Size = new System.Drawing.Size(298, 34);
-            this.tsmiThongTinMonAn.Text = "Thông tin món ăn";
-            // 
-            // tsmiDanhSachDichVu
-            // 
-            this.tsmiDanhSachDichVu.Name = "tsmiDanhSachDichVu";
-            this.tsmiDanhSachDichVu.Size = new System.Drawing.Size(298, 34);
-            this.tsmiDanhSachDichVu.Text = "Danh sách dịch vụ";
-            // 
-            // tsmiHoaDon
-            // 
-            this.tsmiHoaDon.Name = "tsmiHoaDon";
-            this.tsmiHoaDon.Size = new System.Drawing.Size(270, 34);
-            this.tsmiHoaDon.Text = "Hóa đơn";
-            // 
-            // tsmiDoanhThuThang
-            // 
-            this.tsmiDoanhThuThang.Name = "tsmiDoanhThuThang";
-            this.tsmiDoanhThuThang.Size = new System.Drawing.Size(270, 34);
-            this.tsmiDoanhThuThang.Text = "Doanh thu tháng";
             // 
             // tsmiThayDoiQuyDinh
             // 
             this.tsmiThayDoiQuyDinh.Name = "tsmiThayDoiQuyDinh";
-            this.tsmiThayDoiQuyDinh.Size = new System.Drawing.Size(270, 34);
+            this.tsmiThayDoiQuyDinh.Size = new System.Drawing.Size(257, 34);
             this.tsmiThayDoiQuyDinh.Text = "Thay đổi quy định";
+            this.tsmiThayDoiQuyDinh.Click += new System.EventHandler(this.tsmiThayDoiQuyDinh_Click);
             // 
             // frnNhanDatTiecCuoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 794);
+            this.ClientSize = new System.Drawing.Size(1238, 844);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
