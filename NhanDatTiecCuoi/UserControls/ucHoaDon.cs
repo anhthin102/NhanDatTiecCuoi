@@ -16,5 +16,10 @@ namespace NhanDatTiecCuoi.UserControls
         {
             InitializeComponent();
         }
+
+        private void flowLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

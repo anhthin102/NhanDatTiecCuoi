@@ -19,6 +19,7 @@ namespace NhanDatTiecCuoi
         {
             InitializeComponent();
             InitiallizeNavigationControl();
+            this.Size = new Size(850, 685);
         }
         private void InitiallizeNavigationControl()
         {
@@ -68,7 +69,12 @@ namespace NhanDatTiecCuoi
 
         private void tsmiDatTiecCuoi_Click(object sender, EventArgs e)
         {
-            navigationUserControl.Display(2);
+            
+             ucDatTiecCuoi DatTiecCuoi = new ucDatTiecCuoi();
+             this.pnPage.Controls.Add(DatTiecCuoi);
+             DatTiecCuoi.BringToFront();
+            
+            
         }
 
         private void tsmiDanhSachDatTiecCuoi_Click(object sender, EventArgs e)

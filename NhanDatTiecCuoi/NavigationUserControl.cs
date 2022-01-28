@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NhanDatTiecCuoi.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,5 +34,6 @@ namespace NhanDatTiecCuoi
                 userControls[index].BringToFront();
             }
         }
+        
     }
 }

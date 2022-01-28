@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NhanDatTiecCuoi.UserControls
 {
-    public partial class ucThayDoiQuyDinh : UserControl
+    public partial class ucThongTinChiTietDatDichVu : UserControl
     {
-        public ucThayDoiQuyDinh()
+        public ucThongTinChiTietDatDichVu()
         {
             InitializeComponent();
         }
@@ -22,9 +22,16 @@ namespace NhanDatTiecCuoi.UserControls
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ucDatTiecCuoi datTiecCuoi = new ucDatTiecCuoi();
+            this.Controls.Add(datTiecCuoi);
+            datTiecCuoi.BringToFront();
         }
     }
 }

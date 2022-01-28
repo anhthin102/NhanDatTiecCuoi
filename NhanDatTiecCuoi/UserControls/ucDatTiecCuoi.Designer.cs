@@ -36,9 +36,13 @@ namespace NhanDatTiecCuoi.UserControls
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -54,10 +58,13 @@ namespace NhanDatTiecCuoi.UserControls
             this.label11 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
@@ -67,13 +74,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.button4 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -116,7 +116,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(209, 424);
             this.flowLayoutPanel3.TabIndex = 6;
-            this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
             // 
             // label4
             // 
@@ -165,6 +164,14 @@ namespace NhanDatTiecCuoi.UserControls
             this.label6.TabIndex = 0;
             this.label6.Text = "Tên cô dâu";
             // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(10, 152);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(175, 26);
+            this.textBox11.TabIndex = 1;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -175,6 +182,14 @@ namespace NhanDatTiecCuoi.UserControls
             this.label8.TabIndex = 0;
             this.label8.Text = "SĐT";
             this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(10, 213);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(175, 26);
+            this.textBox9.TabIndex = 1;
             // 
             // label7
             // 
@@ -187,6 +202,16 @@ namespace NhanDatTiecCuoi.UserControls
             this.label7.Text = "Ngày đặt tiệc";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(10, 274);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(175, 26);
+            this.dateTimePicker1.TabIndex = 2;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -197,6 +222,16 @@ namespace NhanDatTiecCuoi.UserControls
             this.label9.TabIndex = 0;
             this.label9.Text = "Ngày đãi tiệc";
             this.label9.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(10, 335);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(175, 26);
+            this.dateTimePicker2.TabIndex = 2;
             // 
             // flowLayoutPanel4
             // 
@@ -210,7 +245,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(641, 424);
             this.flowLayoutPanel4.TabIndex = 9;
-            this.flowLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel4_Paint);
             // 
             // label3
             // 
@@ -265,7 +299,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1074, 253);
             this.flowLayoutPanel1.TabIndex = 8;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // label2
             // 
@@ -322,7 +355,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(209, 424);
             this.flowLayoutPanel2.TabIndex = 11;
-            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // label10
             // 
@@ -370,6 +402,14 @@ namespace NhanDatTiecCuoi.UserControls
             this.label12.TabIndex = 0;
             this.label12.Text = "Số bàn dự trữ";
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(10, 152);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(175, 26);
+            this.textBox3.TabIndex = 1;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -379,6 +419,14 @@ namespace NhanDatTiecCuoi.UserControls
             this.label13.Size = new System.Drawing.Size(95, 20);
             this.label13.TabIndex = 0;
             this.label13.Text = "Đơn giá bàn";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(10, 213);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(175, 26);
+            this.textBox7.TabIndex = 1;
             // 
             // label14
             // 
@@ -390,13 +438,14 @@ namespace NhanDatTiecCuoi.UserControls
             this.label14.TabIndex = 0;
             this.label14.Text = "Mã ca";
             // 
-            // textBox7
+            // comboBox1
             // 
-            this.textBox7.Location = new System.Drawing.Point(10, 213);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(175, 26);
-            this.textBox7.TabIndex = 1;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(10, 274);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(175, 28);
+            this.comboBox1.TabIndex = 2;
             // 
             // label15
             // 
@@ -407,6 +456,15 @@ namespace NhanDatTiecCuoi.UserControls
             this.label15.Size = new System.Drawing.Size(70, 20);
             this.label15.TabIndex = 0;
             this.label15.Text = "Mã sảnh";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(10, 337);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(175, 28);
+            this.comboBox2.TabIndex = 3;
             // 
             // button2
             // 
@@ -438,6 +496,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.button3.TabIndex = 3;
             this.button3.Text = "Chỉnh sửa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label19
             // 
@@ -481,6 +540,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.button4.TabIndex = 2;
             this.button4.Text = "Chỉnh sửa";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label17
             // 
@@ -503,68 +563,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.dataGridView4.Size = new System.Drawing.Size(497, 111);
             this.dataGridView4.TabIndex = 1;
             this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick_1);
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(10, 213);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(175, 26);
-            this.textBox9.TabIndex = 1;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(10, 152);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(175, 26);
-            this.textBox11.TabIndex = 1;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(10, 274);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(175, 26);
-            this.dateTimePicker1.TabIndex = 2;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(10, 335);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(175, 26);
-            this.dateTimePicker2.TabIndex = 2;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(10, 152);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(175, 26);
-            this.textBox3.TabIndex = 1;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(10, 274);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(175, 28);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(10, 337);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(175, 28);
-            this.comboBox2.TabIndex = 3;
             // 
             // ucDatTiecCuoi
             // 

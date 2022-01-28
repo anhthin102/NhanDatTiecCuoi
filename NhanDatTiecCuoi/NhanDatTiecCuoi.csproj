@@ -109,6 +109,18 @@
     <Compile Include="UserControls\ucThayDoiQuyDinh.Designer.cs">
       <DependentUpon>ucThayDoiQuyDinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucThongTinChiTietDatBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucThongTinChiTietDatBan.Designer.cs">
+      <DependentUpon>ucThongTinChiTietDatBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucThongTinChiTietDatDichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucThongTinChiTietDatDichVu.Designer.cs">
+      <DependentUpon>ucThongTinChiTietDatDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucThongTinMonAn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +165,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucThayDoiQuyDinh.resx">
       <DependentUpon>ucThayDoiQuyDinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucThongTinChiTietDatBan.resx">
+      <DependentUpon>ucThongTinChiTietDatBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucThongTinChiTietDatDichVu.resx">
+      <DependentUpon>ucThongTinChiTietDatDichVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucThongTinMonAn.resx">
       <DependentUpon>ucThongTinMonAn.cs</DependentUpon>
