@@ -66,6 +66,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.label1.TabIndex = 0;
             this.label1.Text = "THÔNG TIN SẢNH";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -253,6 +254,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.button1.TabIndex = 5;
             this.button1.Text = "Cập nhật";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ucDanhSachSanh
             // 
