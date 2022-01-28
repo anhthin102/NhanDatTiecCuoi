@@ -1,7 +1,7 @@
 ﻿
 namespace NhanDatTiecCuoi
 {
-    partial class Form1
+    partial class frnNhanDatTiecCuoi
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,17 @@ namespace NhanDatTiecCuoi
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frnNhanDatTiecCuoi
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Name = "frnNhanDatTiecCuoi";
+            this.Text = "Nhận đặt tiệc cưới";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

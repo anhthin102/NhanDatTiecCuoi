@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NhanDatTiecCuoi
 {
-    public partial class Form1 : Form
+    public partial class frnNhanDatTiecCuoi : Form
     {
-        public Form1()
+        public frnNhanDatTiecCuoi()
         {
             InitializeComponent();
         }
