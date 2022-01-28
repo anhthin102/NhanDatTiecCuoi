@@ -31,6 +31,7 @@ namespace NhanDatTiecCuoi.UserControls
         {
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -71,9 +71,19 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 66);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(432, 213);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(432, 374);
             this.flowLayoutPanel3.TabIndex = 2;
             this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 5);
+            this.label4.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Mã loại sảnh";
             // 
             // textBox1
             // 
@@ -125,9 +135,9 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel1.Controls.Add(this.dataGridView1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 394);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 467);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1074, 385);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1074, 473);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // label2
@@ -151,16 +161,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.dataGridView1.Size = new System.Drawing.Size(1054, 335);
             this.dataGridView1.TabIndex = 1;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 5);
-            this.label4.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Mã loại sảnh";
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(145, 285);
@@ -181,7 +181,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "ucDanhSachCacLoaiSanh";
-            this.Size = new System.Drawing.Size(1074, 779);
+            this.Size = new System.Drawing.Size(1074, 940);
             this.Load += new System.EventHandler(this.ucDanhSachCacLoaiSanh_Load);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();

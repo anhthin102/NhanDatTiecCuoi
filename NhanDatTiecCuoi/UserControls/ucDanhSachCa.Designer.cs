@@ -64,7 +64,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 51);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(432, 156);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(432, 304);
             this.flowLayoutPanel3.TabIndex = 8;
             this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
             // 
@@ -110,9 +110,9 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel1.Controls.Add(this.dataGridView1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 304);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 408);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1074, 425);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1074, 532);
             this.flowLayoutPanel1.TabIndex = 9;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -148,6 +148,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.label1.TabIndex = 7;
             this.label1.Text = "THÔNG TIN CA";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ucDanhSachCa
             // 
@@ -159,7 +160,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "ucDanhSachCa";
-            this.Size = new System.Drawing.Size(1074, 729);
+            this.Size = new System.Drawing.Size(1074, 940);
             this.Load += new System.EventHandler(this.ucDanhSachCa_Load);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();

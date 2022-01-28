@@ -68,7 +68,7 @@ namespace NhanDatTiecCuoi
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1238, 844);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1238, 1005);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -96,7 +96,7 @@ namespace NhanDatTiecCuoi
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1230, 785);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1230, 946);
             this.tableLayoutPanel2.TabIndex = 0;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
@@ -106,7 +106,7 @@ namespace NhanDatTiecCuoi
             this.pnPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnPage.Location = new System.Drawing.Point(153, 3);
             this.pnPage.Name = "pnPage";
-            this.pnPage.Size = new System.Drawing.Size(1074, 779);
+            this.pnPage.Size = new System.Drawing.Size(1074, 940);
             this.pnPage.TabIndex = 0;
             this.pnPage.Paint += new System.Windows.Forms.PaintEventHandler(this.pnPage_Paint);
             // 
@@ -123,7 +123,7 @@ namespace NhanDatTiecCuoi
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(122, 785);
+            this.menuStrip1.Size = new System.Drawing.Size(122, 946);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -258,7 +258,7 @@ namespace NhanDatTiecCuoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 844);
+            this.ClientSize = new System.Drawing.Size(1238, 1005);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;

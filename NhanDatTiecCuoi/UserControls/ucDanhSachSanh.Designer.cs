@@ -74,10 +74,11 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel1.Controls.Add(this.dataGridView1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 448);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 522);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1074, 331);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1074, 418);
             this.flowLayoutPanel1.TabIndex = 1;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // label2
             // 
@@ -109,7 +110,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(448, 50);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(633, 392);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(633, 414);
             this.flowLayoutPanel4.TabIndex = 4;
             // 
             // label3
@@ -150,7 +151,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(10, 50);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(432, 392);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(432, 414);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
             // label4
@@ -267,7 +268,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "ucDanhSachSanh";
-            this.Size = new System.Drawing.Size(1074, 779);
+            this.Size = new System.Drawing.Size(1074, 940);
             this.Load += new System.EventHandler(this.ucDanhSachSanh_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
