@@ -8,6 +8,17 @@ namespace NhanDatTiecCuoi.Data
 {
     public class DICHVU
     {
+        public DICHVU()
+        {
+
+        }
+        public DICHVU(string MaDichVu, string TenDichVu, int DonGia, string GhiChu)
+        {
+            this.MaDichVu = MaDichVu;
+            this.TenDichVu = TenDichVu;
+            this.DonGia = DonGia;
+            this.GhiChu = GhiChu;
+        }
         private string _MaDichVu = "";
         public string MaDichVu
         {
