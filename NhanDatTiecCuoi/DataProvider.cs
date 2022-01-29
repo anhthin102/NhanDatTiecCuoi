@@ -10,6 +10,18 @@ namespace NhanDatTiecCuoi
 {
     public class DataProvider
     {
+        private static DSMONAN _dSMONAN = null;
+        public static DSMONAN dSMONAN
+        {
+            get
+            {
+                if (_dSMONAN == null)
+                {
+                    _dSMONAN = new DSMONAN();
+                }
+                return _dSMONAN;
+            }
+        }
         private static DSLOAISANH _dSLOAISANH = null;
         public static DSLOAISANH SLOAISANH
         {

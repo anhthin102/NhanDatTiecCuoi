@@ -8,6 +8,17 @@ namespace NhanDatTiecCuoi.Data
 {
     public class MONAN
     {
+        public MONAN()
+        {
+
+        }
+        public MONAN(string MaMonAn, string TenMonAn, int DonGia, string GhiChu)
+        {
+            this.MaMonAn = MaMonAn;
+            this.TenMonAn = TenMonAn;
+            this.DonGia = DonGia;
+            this.GhiChu = GhiChu;
+        }
         private string _MaMonAn = "";
         public string MaMonAn
         {

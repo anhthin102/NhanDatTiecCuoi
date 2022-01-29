@@ -101,12 +101,11 @@ namespace NhanDatTiecCuoi.UserControls
                 bool kq = DataProvider.dSDICHVU.ThemMoi(dv);
                 if (kq == true)
                 {
-                    MessageBox.Show("Thêm mới loại sảnh thành công");
+                    MessageBox.Show("Thêm mới dịch vụ thành công");
                     DataProvider.dSDICHVU.ThemMaMoi();
                 }
                 HienThiDanhSach();
                 ReLoadMa();
-                MessageBox.Show(txtMaDichVu.Text);
             }
         }
 
