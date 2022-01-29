@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\BAOCAO.cs" />
+    <Compile Include="Data\CA.cs" />
+    <Compile Include="Data\CTBAOCAO.cs" />
+    <Compile Include="Data\CTDATBAN.cs" />
+    <Compile Include="Data\CTDATDICHVU.cs" />
+    <Compile Include="Data\DICHVU.cs" />
+    <Compile Include="Data\HOADON.cs" />
+    <Compile Include="Data\LOAISANH.cs" />
+    <Compile Include="Data\MONAN.cs" />
+    <Compile Include="Data\SANH.cs" />
+    <Compile Include="Data\THAMSO.cs" />
+    <Compile Include="Data\TIECCUOI.cs" />
     <Compile Include="frmNhanDatTiecCuoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,5 +200,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -69,12 +69,10 @@ namespace NhanDatTiecCuoi
 
         private void tsmiDatTiecCuoi_Click(object sender, EventArgs e)
         {
-            
-             ucDatTiecCuoi DatTiecCuoi = new ucDatTiecCuoi();
-             this.pnPage.Controls.Add(DatTiecCuoi);
-             DatTiecCuoi.BringToFront();
-            
-            
+
+            navigationUserControl.Display(2);
+
+
         }
 
         private void tsmiDanhSachDatTiecCuoi_Click(object sender, EventArgs e)
