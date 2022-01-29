@@ -34,7 +34,18 @@ namespace NhanDatTiecCuoi
                 return _SCA;
             }
         }
-
+        private static DSDICHVU _dSDICHVU = null;
+        public static DSDICHVU dSDICHVU
+        {
+            get
+            {
+                if (_dSDICHVU == null)
+                {
+                    _dSDICHVU = new DSDICHVU();
+                }
+                return _dSDICHVU;
+            }
+        }
         private static int _StringToInt = 0;
         public static int StringToInt(TextBox textBox, ErrorProvider ep)
         {

@@ -21,5 +21,14 @@ namespace NhanDatTiecCuoi.Data
             }
         }
         public string LoaiCa { get; set; }
+        public CA()
+        {
+
+        }
+        public CA(string MaCa, string LoaiCa)
+        {
+            this.MaCa = MaCa;
+            this.LoaiCa = LoaiCa;
+        }
     }
 }
