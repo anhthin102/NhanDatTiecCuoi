@@ -1,4 +1,5 @@
 ﻿using NhanDatTiecCuoi.Data;
+using NhanDatTiecCuoi.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,19 @@ using System.Threading.Tasks;
 
 namespace NhanDatTiecCuoi.Business
 {
-    public class DSLOAISANH
+    public class DSLOAISANH: IDanhSach<LOAISANH>
     {
         private List<LOAISANH> LOAISANHs = new List<LOAISANH>();
-        public List<LOAISANH> LayDSLoaiSanh()
+        private int ma = 2;
+        public int LayMaMoi()
+        {
+            return ma + 1;
+        }
+        public void ThemMaMoi()
+        {
+            ma = ma + 1;
+        }
+        public List<LOAISANH> LayDS()
         {
             if (LOAISANHs.Count == 0)
             {
@@ -26,7 +36,7 @@ namespace NhanDatTiecCuoi.Business
             };
             LOAISANHs = ls;
         }
-        public bool ThemMoiLoaiSanh(LOAISANH ls) {
+        public bool ThemMoi(LOAISANH ls) {
             if (ls != null)
             {
                 LOAISANHs.Add(ls);
@@ -34,20 +44,8 @@ namespace NhanDatTiecCuoi.Business
             }
             return false;
         }
-        public LOAISANH LayThongTinLoaiSanhTheoMa(string ma)
-        {
-            LOAISANH ls = null;
-            foreach(LOAISANH lOAISANH in LOAISANHs)
-            {
-                if (ma == lOAISANH.MaLoaiSanh)
-                {
-                    ls = lOAISANH;
-                    break;
-                }
-            }
-            return ls;
-        }
-        public bool CapNhatThongTinLoaiSanh(LOAISANH ls)
+        
+        public bool CapNhatThongTin(LOAISANH ls)
         {
             for(int i=0; i<LOAISANHs.Count; i++)
             {
@@ -59,7 +57,7 @@ namespace NhanDatTiecCuoi.Business
             }
             return false;
         }
-        public bool XoaLoaiSanh(LOAISANH ls)
+        public bool Xoa(LOAISANH ls)
         {
             if (ls != null)
             {
@@ -67,6 +65,20 @@ namespace NhanDatTiecCuoi.Business
                 return true;
             }
             return false;
+        }
+
+        public LOAISANH LayThongTinTheoMa(string ma)
+        {
+            LOAISANH ls = null;
+            foreach (LOAISANH lOAISANH in LOAISANHs)
+            {
+                if (ma == lOAISANH.MaLoaiSanh)
+                {
+                    ls = lOAISANH;
+                    break;
+                }
+            }
+            return ls;
         }
     }
 }

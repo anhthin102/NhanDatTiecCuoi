@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\DSCA.cs" />
     <Compile Include="Business\DSLOAISANH.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Data\BAOCAO.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="frmNhanDatTiecCuoi.Designer.cs">
       <DependentUpon>frmNhanDatTiecCuoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interface\IDanhSach.cs" />
     <Compile Include="NavigationUserControl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

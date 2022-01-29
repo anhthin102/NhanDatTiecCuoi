@@ -29,6 +29,7 @@ namespace NhanDatTiecCuoi.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,9 +44,15 @@ namespace NhanDatTiecCuoi.UserControls
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThemMoi = new System.Windows.Forms.Button();
+            this.epTenLoaiSanh = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epDonGiaBanToiThieu = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epMaLoaiSanh = new System.Windows.Forms.ErrorProvider(this.components);
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epTenLoaiSanh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epDonGiaBanToiThieu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMaLoaiSanh)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,7 +79,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 66);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(432, 279);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(471, 279);
             this.flowLayoutPanel3.TabIndex = 2;
             // 
             // label4
@@ -153,6 +160,7 @@ namespace NhanDatTiecCuoi.UserControls
             // 
             // dgvSanh
             // 
+            this.dgvSanh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSanh.Location = new System.Drawing.Point(10, 40);
             this.dgvSanh.Margin = new System.Windows.Forms.Padding(10);
@@ -161,6 +169,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.dgvSanh.RowTemplate.Height = 28;
             this.dgvSanh.Size = new System.Drawing.Size(1054, 335);
             this.dgvSanh.TabIndex = 1;
+            this.dgvSanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanh_CellClick);
             // 
             // btnCapNhat
             // 
@@ -170,6 +179,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.btnCapNhat.TabIndex = 6;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnXoa
             // 
@@ -179,6 +189,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThemMoi
             // 
@@ -189,6 +200,19 @@ namespace NhanDatTiecCuoi.UserControls
             this.btnThemMoi.TabIndex = 8;
             this.btnThemMoi.Text = "Thêm mới";
             this.btnThemMoi.UseVisualStyleBackColor = false;
+            this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
+            // 
+            // epTenLoaiSanh
+            // 
+            this.epTenLoaiSanh.ContainerControl = this;
+            // 
+            // epDonGiaBanToiThieu
+            // 
+            this.epDonGiaBanToiThieu.ContainerControl = this;
+            // 
+            // epMaLoaiSanh
+            // 
+            this.epMaLoaiSanh.ContainerControl = this;
             // 
             // ucDanhSachCacLoaiSanh
             // 
@@ -204,11 +228,15 @@ namespace NhanDatTiecCuoi.UserControls
             this.Name = "ucDanhSachCacLoaiSanh";
             this.Size = new System.Drawing.Size(1074, 940);
             this.Load += new System.EventHandler(this.ucDanhSachCacLoaiSanh_Load);
+            this.Click += new System.EventHandler(this.ucDanhSachCacLoaiSanh_Click);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epTenLoaiSanh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epDonGiaBanToiThieu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMaLoaiSanh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +258,8 @@ namespace NhanDatTiecCuoi.UserControls
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnThemMoi;
         private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.ErrorProvider epTenLoaiSanh;
+        private System.Windows.Forms.ErrorProvider epDonGiaBanToiThieu;
+        private System.Windows.Forms.ErrorProvider epMaLoaiSanh;
     }
 }
