@@ -28,7 +28,7 @@ namespace NhanDatTiecCuoi.Business
 
         public int LayMaMoi()
         {
-            throw new NotImplementedException();
+            return ma + 1;
         }
 
         public CA LayThongTinTheoMa(string ma)
@@ -38,7 +38,7 @@ namespace NhanDatTiecCuoi.Business
 
         public void ThemMaMoi()
         {
-            throw new NotImplementedException();
+            ma = ma + 1;
         }
 
         public bool ThemMoi(CA ds)
