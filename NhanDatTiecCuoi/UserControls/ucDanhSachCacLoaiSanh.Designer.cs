@@ -32,18 +32,20 @@ namespace NhanDatTiecCuoi.UserControls
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMaLoaiSanh = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTenLoaiSanh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDonGiaBanToiThieu = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dgvSanh = new System.Windows.Forms.DataGridView();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnThemMoi = new System.Windows.Forms.Button();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSanh)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,24 +58,22 @@ namespace NhanDatTiecCuoi.UserControls
             this.label1.TabIndex = 1;
             this.label1.Text = "THÔNG TIN LOẠI SẢNH";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel3.Controls.Add(this.label4);
-            this.flowLayoutPanel3.Controls.Add(this.textBox1);
+            this.flowLayoutPanel3.Controls.Add(this.txtMaLoaiSanh);
             this.flowLayoutPanel3.Controls.Add(this.label5);
-            this.flowLayoutPanel3.Controls.Add(this.textBox2);
+            this.flowLayoutPanel3.Controls.Add(this.txtTenLoaiSanh);
             this.flowLayoutPanel3.Controls.Add(this.label7);
-            this.flowLayoutPanel3.Controls.Add(this.textBox3);
+            this.flowLayoutPanel3.Controls.Add(this.txtDonGiaBanToiThieu);
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 66);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(432, 374);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(432, 279);
             this.flowLayoutPanel3.TabIndex = 2;
-            this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
             // 
             // label4
             // 
@@ -85,13 +85,14 @@ namespace NhanDatTiecCuoi.UserControls
             this.label4.TabIndex = 0;
             this.label4.Text = "Mã loại sảnh";
             // 
-            // textBox1
+            // txtMaLoaiSanh
             // 
-            this.textBox1.Location = new System.Drawing.Point(10, 30);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(404, 26);
-            this.textBox1.TabIndex = 1;
+            this.txtMaLoaiSanh.Location = new System.Drawing.Point(10, 30);
+            this.txtMaLoaiSanh.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.txtMaLoaiSanh.Name = "txtMaLoaiSanh";
+            this.txtMaLoaiSanh.ReadOnly = true;
+            this.txtMaLoaiSanh.Size = new System.Drawing.Size(404, 26);
+            this.txtMaLoaiSanh.TabIndex = 1;
             // 
             // label5
             // 
@@ -103,13 +104,13 @@ namespace NhanDatTiecCuoi.UserControls
             this.label5.TabIndex = 0;
             this.label5.Text = "Tên loại sảnh";
             // 
-            // textBox2
+            // txtTenLoaiSanh
             // 
-            this.textBox2.Location = new System.Drawing.Point(10, 91);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(404, 26);
-            this.textBox2.TabIndex = 1;
+            this.txtTenLoaiSanh.Location = new System.Drawing.Point(10, 91);
+            this.txtTenLoaiSanh.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.txtTenLoaiSanh.Name = "txtTenLoaiSanh";
+            this.txtTenLoaiSanh.Size = new System.Drawing.Size(404, 26);
+            this.txtTenLoaiSanh.TabIndex = 1;
             // 
             // label7
             // 
@@ -121,18 +122,18 @@ namespace NhanDatTiecCuoi.UserControls
             this.label7.TabIndex = 0;
             this.label7.Text = "Đơn giá bàn tối thiểu";
             // 
-            // textBox3
+            // txtDonGiaBanToiThieu
             // 
-            this.textBox3.Location = new System.Drawing.Point(10, 152);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(404, 26);
-            this.textBox3.TabIndex = 1;
+            this.txtDonGiaBanToiThieu.Location = new System.Drawing.Point(10, 152);
+            this.txtDonGiaBanToiThieu.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.txtDonGiaBanToiThieu.Name = "txtDonGiaBanToiThieu";
+            this.txtDonGiaBanToiThieu.Size = new System.Drawing.Size(404, 26);
+            this.txtDonGiaBanToiThieu.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Controls.Add(this.dataGridView1);
+            this.flowLayoutPanel1.Controls.Add(this.dgvSanh);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 467);
@@ -150,33 +151,53 @@ namespace NhanDatTiecCuoi.UserControls
             this.label2.TabIndex = 0;
             this.label2.Text = "Danh sách loại sảnh";
             // 
-            // dataGridView1
+            // dgvSanh
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 40);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(10);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1054, 335);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvSanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSanh.Location = new System.Drawing.Point(10, 40);
+            this.dgvSanh.Margin = new System.Windows.Forms.Padding(10);
+            this.dgvSanh.Name = "dgvSanh";
+            this.dgvSanh.RowHeadersWidth = 62;
+            this.dgvSanh.RowTemplate.Height = 28;
+            this.dgvSanh.Size = new System.Drawing.Size(1054, 335);
+            this.dgvSanh.TabIndex = 1;
             // 
-            // button1
+            // btnCapNhat
             // 
-            this.button1.Location = new System.Drawing.Point(145, 285);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 34);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Cập nhật";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCapNhat.Location = new System.Drawing.Point(145, 285);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(108, 34);
+            this.btnCapNhat.TabIndex = 6;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = true;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(275, 285);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(108, 34);
+            this.btnXoa.TabIndex = 7;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            // 
+            // btnThemMoi
+            // 
+            this.btnThemMoi.BackColor = System.Drawing.Color.Transparent;
+            this.btnThemMoi.Location = new System.Drawing.Point(17, 285);
+            this.btnThemMoi.Name = "btnThemMoi";
+            this.btnThemMoi.Size = new System.Drawing.Size(108, 34);
+            this.btnThemMoi.TabIndex = 8;
+            this.btnThemMoi.Text = "Thêm mới";
+            this.btnThemMoi.UseVisualStyleBackColor = false;
             // 
             // ucDanhSachCacLoaiSanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnThemMoi);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
@@ -187,7 +208,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSanh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,15 +218,17 @@ namespace NhanDatTiecCuoi.UserControls
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMaLoaiSanh;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTenLoaiSanh;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDonGiaBanToiThieu;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSanh;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.Button btnThemMoi;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

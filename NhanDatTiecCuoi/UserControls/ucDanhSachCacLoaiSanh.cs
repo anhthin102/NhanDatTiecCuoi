@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NhanDatTiecCuoi.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,28 +18,20 @@ namespace NhanDatTiecCuoi.UserControls
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void ucDanhSachCacLoaiSanh_Load(object sender, EventArgs e)
         {
+            HienThiDanhSachCacLoaiSanh();
+            txtMaLoaiSanh.Text = (DataProvider.SLOAISANH.LayDSLoaiSanh().Count + 1).ToString();
+        }
+        private void HienThiDanhSachCacLoaiSanh()
+        {
+            List<LOAISANH> dsSanh = DataProvider.SLOAISANH.LayDSLoaiSanh();
+            dgvSanh.DataSource = null;
+            dgvSanh.DataSource = dsSanh;
+            dgvSanh.Columns[0].HeaderText = "Mã Loại Sảnh";
+            dgvSanh.Columns[1].HeaderText = "Tên Loại Sảnh";
+            dgvSanh.Columns[2].HeaderText = "Đơn giá bàn Tối thiểu";
 
         }
     }

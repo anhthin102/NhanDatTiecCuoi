@@ -17,7 +17,17 @@ namespace NhanDatTiecCuoi.Data
             }
         }
         public string TenLoaiSanh { get; set; }
-        public string DonGiaBanToiThieu { get; set; }
+        public int DonGiaBanToiThieu { get; set; }
+        public LOAISANH()
+        {
+
+        }
+        public LOAISANH(string MaLoaiSanh, string TenLoaiSanh, int DonGiaBanToiThieu)
+        {
+            this.MaLoaiSanh = MaLoaiSanh;
+            this.TenLoaiSanh = TenLoaiSanh;
+            this.DonGiaBanToiThieu = DonGiaBanToiThieu;
+        }
 
     }
 }

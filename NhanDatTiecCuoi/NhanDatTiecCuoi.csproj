@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\DSLOAISANH.cs" />
+    <Compile Include="DataProvider.cs" />
     <Compile Include="Data\BAOCAO.cs" />
     <Compile Include="Data\CA.cs" />
     <Compile Include="Data\CTBAOCAO.cs" />
