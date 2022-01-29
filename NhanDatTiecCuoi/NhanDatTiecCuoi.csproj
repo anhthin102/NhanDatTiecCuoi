@@ -49,6 +49,7 @@
     <Compile Include="Business\DSCA.cs" />
     <Compile Include="Business\DSDICHVU.cs" />
     <Compile Include="Business\DSLOAISANH.cs" />
+    <Compile Include="Converter.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Data\BAOCAO.cs" />
     <Compile Include="Data\CA.cs" />

@@ -21,10 +21,13 @@ namespace NhanDatTiecCuoi.UserControls
         private void HienThiDanhSachCacLoaiCa()
         {
             List<CA> dsCa = DataProvider.SCA.LayDS();
+            Converter converter = new Converter();
+            DataTable dt = converter.ToDataTable(dsCa);
+            DataTable data = converter.AutoNumberedTable(dt);
             dgvCa.DataSource = null;
-            dgvCa.DataSource = dsCa;
-            dgvCa.Columns[0].HeaderText = "Mã ca";
-            dgvCa.Columns[1].HeaderText = "Tên Loại ca";
+            dgvCa.DataSource = data;
+            dgvCa.Columns[1].HeaderText = "Mã ca";
+            dgvCa.Columns[2].HeaderText = "Tên Loại ca";
             dgvCa.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 

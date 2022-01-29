@@ -32,11 +32,15 @@ namespace NhanDatTiecCuoi.UserControls
         private void HienThiDanhSachCacLoaiSanh()
         {
             List<LOAISANH> dsSanh = DataProvider.SLOAISANH.LayDS();
+            Converter converter = new Converter();
+            DataTable dt = converter.ToDataTable(dsSanh);
+            DataTable data = converter.AutoNumberedTable(dt);
             dgvSanh.DataSource = null;
-            dgvSanh.DataSource = dsSanh;
-            dgvSanh.Columns[0].HeaderText = "Mã Loại Sảnh";
-            dgvSanh.Columns[1].HeaderText = "Tên Loại Sảnh";
-            dgvSanh.Columns[2].HeaderText = "Đơn giá bàn Tối thiểu";
+            dgvSanh.DataSource = data;
+            dgvSanh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvSanh.Columns[1].HeaderText = "Mã Loại Sảnh";
+            dgvSanh.Columns[2].HeaderText = "Tên Loại Sảnh";
+            dgvSanh.Columns[3].HeaderText = "Đơn giá bàn Tối thiểu";
         }
 
         private void btnThemMoi_Click(object sender, EventArgs e)
@@ -79,7 +83,7 @@ namespace NhanDatTiecCuoi.UserControls
             {
                 epTenLoaiSanh.SetError(txtTenLoaiSanh, "");
             }
-            if(DataProvider.StringToInt(txtDonGiaBanToiThieu, epDonGiaBanToiThieu) == 0)
+            if(DataProvider.StringToInt(txtDonGiaBanToiThieu, epDonGiaBanToiThieu) ==0)
             {
                 err++;
             }
