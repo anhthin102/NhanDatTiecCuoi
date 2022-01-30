@@ -6,8 +6,20 @@ using System.Threading.Tasks;
 
 namespace NhanDatTiecCuoi.Data
 {
-    class CTDATBAN
+    public class CTDATBAN
     {
+        public CTDATBAN()
+        {
+
+        }
+        public CTDATBAN(string MaTiecCuoi, string MaMonAn, int SoLuong,int DonGia, string GhiChu) 
+        {
+            this.MaTiecCuoi = MaTiecCuoi;
+            this.MaMonAn = MaMonAn;
+            this.SoLuong = SoLuong;
+            this.DonGia = DonGia;
+            this.GhiChu = GhiChu;
+        }
         private string _MaTiecCuoi = "";
         public string MaTiecCuoi
         {
@@ -17,7 +29,7 @@ namespace NhanDatTiecCuoi.Data
             }
             set
             {
-                MaTiecCuoi = value;
+                _MaTiecCuoi = value;
             }
         }
         private string _MaMonAn = "";

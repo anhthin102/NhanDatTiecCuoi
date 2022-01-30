@@ -88,6 +88,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1074, 418);
             this.flowLayoutPanel1.TabIndex = 1;
+            this.flowLayoutPanel1.Click += new System.EventHandler(this.flowLayoutPanel1_Click);
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint_1);
             // 
             // label2
@@ -124,6 +125,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel4.Size = new System.Drawing.Size(613, 414);
             this.flowLayoutPanel4.TabIndex = 4;
             this.flowLayoutPanel4.Click += new System.EventHandler(this.flowLayoutPanel4_Click);
+            this.flowLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel4_Paint);
             // 
             // label3
             // 

@@ -112,6 +112,15 @@ namespace NhanDatTiecCuoi.UserControls
             }
             if (InputValidate() == true)
             {
+                List<TIECCUOI> tc = DataProvider.dSTIECCUOI.LayDS();
+                foreach (TIECCUOI t in tc)
+                {
+                    if (t.MaCa == txtMaCa.Text && DateTime.Compare(DateTime.Now, t.NgayDaiTiec) == -1)
+                    {
+                        MessageBox.Show("Không thể xóa do có tiệc cưới trong ca này");
+                        return;
+                    }
+                }
                 CA ca = DataProvider.SCA.LayThongTinTheoMa(txtMaCa.Text);
                 if (MessageBox.Show("Bạn có muốn xóa ca " + txtMaCa.Text + " hay không?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {

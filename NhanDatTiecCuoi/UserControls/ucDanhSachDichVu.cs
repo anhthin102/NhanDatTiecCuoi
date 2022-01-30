@@ -154,6 +154,28 @@ namespace NhanDatTiecCuoi.UserControls
             }
             if (InputValidate() == true)
             {
+                List<CTDATDICHVU> dichvu = DataProvider.dSCHITIETDATDICHVU.LayDS();
+                List<TIECCUOI> tc = DataProvider.dSTIECCUOI.LayDS();
+                foreach (CTDATDICHVU d in dichvu)
+                {
+                    if (d.MaDichVu == txtMaDichVu.Text)
+                    {
+                        {
+                            foreach(TIECCUOI tIECCUOI in tc)
+                            {
+                                if (tIECCUOI.MaTiecCuoi == d.MaTiecCuoi)
+                                {
+                                    if(DateTime.Compare(DateTime.Now, tIECCUOI.NgayDaiTiec) == -1)
+                                    {
+                                        MessageBox.Show("Không thể xóa do có tiệc cưới sử dụng dịch vụ này");
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                }
                 DICHVU dv = DataProvider.dSDICHVU.LayThongTinTheoMa(txtMaDichVu.Text);
                 if (MessageBox.Show("Bạn có muốn xóa loại dịch vụ " + txtMaDichVu.Text + " hay không?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {

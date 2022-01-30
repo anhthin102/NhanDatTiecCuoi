@@ -11,6 +11,42 @@ namespace NhanDatTiecCuoi
 {
     public class DataProvider
     {
+        private static DSCHITIETDATDICHVU _dSCHITIETDATDICHVU = null;
+        public static DSCHITIETDATDICHVU dSCHITIETDATDICHVU
+        {
+            get
+            {
+                if (_dSCHITIETDATDICHVU == null)
+                {
+                    _dSCHITIETDATDICHVU = new DSCHITIETDATDICHVU();
+                }
+                return _dSCHITIETDATDICHVU;
+            }
+        }
+        private static DSCHITIETDATBAN _dSCHITIETDATBAN = null;
+        public static DSCHITIETDATBAN dSCHITIETDATBAN
+        {
+            get
+            {
+                if (_dSCHITIETDATBAN == null)
+                {
+                    _dSCHITIETDATBAN = new DSCHITIETDATBAN();
+                }
+                return _dSCHITIETDATBAN;
+            }
+        }
+        private static DSTIECCUOI _dSTIECCUOI = null;
+        public static DSTIECCUOI dSTIECCUOI
+        {
+            get
+            {
+                if (_dSTIECCUOI == null)
+                {
+                    _dSTIECCUOI = new DSTIECCUOI();
+                }
+                return _dSTIECCUOI;
+            }
+        }
         private static DSSANH _sANH = null;
         public static DSSANH SANHs
         {

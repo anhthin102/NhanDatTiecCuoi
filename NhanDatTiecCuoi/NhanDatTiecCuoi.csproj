@@ -47,10 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\DSCA.cs" />
+    <Compile Include="Business\DSCHITIETDATBAN.cs" />
+    <Compile Include="Business\DSCHITIETDATDICHVU.cs" />
     <Compile Include="Business\DSDICHVU.cs" />
     <Compile Include="Business\DSLOAISANH.cs" />
     <Compile Include="Business\DSMONAN.cs" />
     <Compile Include="Business\DSSANH.cs" />
+    <Compile Include="Business\DSTIECCUOI.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Data\BAOCAO.cs" />

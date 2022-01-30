@@ -31,6 +31,7 @@ namespace NhanDatTiecCuoi.UserControls
             dgvLoaiSanh.Columns[1].HeaderText = "Mã Loại Sảnh";
             dgvLoaiSanh.Columns[2].HeaderText = "Tên Loại Sảnh";
             dgvLoaiSanh.Columns[3].HeaderText = "Đơn giá bàn Tối thiểu";
+            
 
         }
         private void HienThiDanhSach()
@@ -38,7 +39,7 @@ namespace NhanDatTiecCuoi.UserControls
             List<SANH> dsSanh = DataProvider.SANHs.LayDS();
             Converter converter = new Converter();
             DataTable dt = converter.ToDataTable(dsSanh);
-            dt.Columns.Add("Đơn giá bán tối thiểu").SetOrdinal(3);
+            dt.Columns.Add("Đơn giá bàn tối thiểu").SetOrdinal(3);
             DataTable data = converter.AutoNumberedTable(dt);
             dgvSanh.DataSource = null;
             dgvSanh.DataSource = data;
@@ -242,6 +243,15 @@ namespace NhanDatTiecCuoi.UserControls
             }
             if (InputValidate() == true)
             {
+                List<TIECCUOI> tc = DataProvider.dSTIECCUOI.LayDS();
+                foreach (TIECCUOI t in tc)
+                {
+                    if (t.MaSanh == txtMaSanh.Text && DateTime.Compare(DateTime.Now,t.NgayDaiTiec)==-1)
+                    {
+                        MessageBox.Show("Không thể xóa do có tiệc cưới trong sảnh này");
+                        return;
+                    }
+                }
                 SANH dv = DataProvider.SANHs.LayThongTinTheoMa(txtMaSanh.Text);
                 if (MessageBox.Show("Bạn có muốn xóa sảnh " + txtMaSanh.Text + " hay không?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -255,6 +265,18 @@ namespace NhanDatTiecCuoi.UserControls
                 }
 
             }
+        }
+
+        private void flowLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Click(object sender, EventArgs e)
+        {
+            HienThiDanhSach();
+            HienThiDanhSachLoaiSanh();
+            ReLoadMa();
         }
     }
 }

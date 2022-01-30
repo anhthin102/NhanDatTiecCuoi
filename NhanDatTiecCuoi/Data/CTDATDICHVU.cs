@@ -8,6 +8,18 @@ namespace NhanDatTiecCuoi.Data
 {
     public class CTDATDICHVU
     {
+        public CTDATDICHVU()
+        {
+
+        }
+        public CTDATDICHVU(string MaTiecCuoi, string MaDichVu, int SoLuong, int DonGia, string GhiChu)
+        {
+            this.MaTiecCuoi = MaTiecCuoi;
+            this.MaDichVu = MaDichVu;
+            this.SoLuong = SoLuong;
+            this.DonGia = DonGia;
+            this.GhiChu = GhiChu;
+        }
         private string _MaTiecCuoi = "";
         public string MaTiecCuoi
         {
@@ -17,7 +29,7 @@ namespace NhanDatTiecCuoi.Data
             }
             set
             {
-                MaTiecCuoi = value;
+                _MaTiecCuoi = value;
             }
         }
         private string _MaDichVu = "";

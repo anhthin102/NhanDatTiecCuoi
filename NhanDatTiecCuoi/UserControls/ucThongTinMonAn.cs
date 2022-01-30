@@ -123,6 +123,7 @@ namespace NhanDatTiecCuoi.UserControls
             }
             if (InputValidate() == true)
             {
+               
                 MONAN dv = new MONAN();
                 dv.MaMonAn = txtMaMonAn.Text;
                 dv.TenMonAn = txtTenMonAn.Text;
@@ -151,6 +152,28 @@ namespace NhanDatTiecCuoi.UserControls
             }
             if (InputValidate() == true)
             {
+                List<CTDATBAN> datban = DataProvider.dSCHITIETDATBAN.LayDS();
+                List<TIECCUOI> tc = DataProvider.dSTIECCUOI.LayDS();
+                foreach (CTDATBAN d in datban)
+                {
+                    if (d.MaMonAn == txtMaMonAn.Text)
+                    {
+                        {
+                            foreach (TIECCUOI tIECCUOI in tc)
+                            {
+                                if (tIECCUOI.MaTiecCuoi == d.MaTiecCuoi)
+                                {
+                                    if (DateTime.Compare(DateTime.Now, tIECCUOI.NgayDaiTiec) == -1)
+                                    {
+                                        MessageBox.Show("Không thể xóa do có tiệc cưới có món ăn này");
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
                 MONAN dv = DataProvider.dSMONAN.LayThongTinTheoMa(txtMaMonAn.Text);
                 if (MessageBox.Show("Bạn có muốn xóa loại món ăn " + txtMaMonAn.Text + " hay không?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
