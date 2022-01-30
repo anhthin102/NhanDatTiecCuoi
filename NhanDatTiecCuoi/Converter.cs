@@ -44,7 +44,7 @@ namespace NhanDatTiecCuoi
 
             DataColumn AutoNumberColumn = new DataColumn();
 
-            AutoNumberColumn.ColumnName = "No.";
+            AutoNumberColumn.ColumnName = "STT";
 
             AutoNumberColumn.DataType = typeof(int);
 

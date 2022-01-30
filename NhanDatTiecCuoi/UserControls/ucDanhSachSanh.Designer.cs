@@ -29,31 +29,42 @@ namespace NhanDatTiecCuoi.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSanh = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvLoaiSanh = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMaSanh = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTenSanh = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbMaLoaiSanh = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.nupSoLuongBanMax = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnThemMoi = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.epMaSanh = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epTenSanh = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epMaLoaiSanh = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epSoLuongBanToiDa = new System.Windows.Forms.ErrorProvider(this.components);
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSanh)).BeginInit();
             this.flowLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiSanh)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupSoLuongBanMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMaSanh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epTenSanh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMaLoaiSanh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epSoLuongBanToiDa)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,19 +77,18 @@ namespace NhanDatTiecCuoi.UserControls
             this.label1.TabIndex = 0;
             this.label1.Text = "THÔNG TIN SẢNH";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Controls.Add(this.dataGridView1);
+            this.flowLayoutPanel1.Controls.Add(this.dgvSanh);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 522);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1074, 418);
             this.flowLayoutPanel1.TabIndex = 1;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint_1);
             // 
             // label2
             // 
@@ -90,28 +100,29 @@ namespace NhanDatTiecCuoi.UserControls
             this.label2.TabIndex = 0;
             this.label2.Text = "Danh sách sảnh";
             // 
-            // dataGridView1
+            // dgvSanh
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 40);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(10);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1054, 281);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvSanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSanh.Location = new System.Drawing.Point(10, 40);
+            this.dgvSanh.Margin = new System.Windows.Forms.Padding(10);
+            this.dgvSanh.Name = "dgvSanh";
+            this.dgvSanh.RowHeadersWidth = 62;
+            this.dgvSanh.RowTemplate.Height = 28;
+            this.dgvSanh.Size = new System.Drawing.Size(1054, 281);
+            this.dgvSanh.TabIndex = 1;
             // 
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel4.Controls.Add(this.label3);
-            this.flowLayoutPanel4.Controls.Add(this.dataGridView2);
+            this.flowLayoutPanel4.Controls.Add(this.dgvLoaiSanh);
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(448, 50);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(468, 50);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(633, 414);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(613, 414);
             this.flowLayoutPanel4.TabIndex = 4;
+            this.flowLayoutPanel4.Click += new System.EventHandler(this.flowLayoutPanel4_Click);
             // 
             // label3
             // 
@@ -123,36 +134,37 @@ namespace NhanDatTiecCuoi.UserControls
             this.label3.TabIndex = 0;
             this.label3.Text = "Danh sách các loại sảnh";
             // 
-            // dataGridView2
+            // dgvLoaiSanh
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(10, 40);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(10);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(606, 293);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvLoaiSanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoaiSanh.Location = new System.Drawing.Point(10, 40);
+            this.dgvLoaiSanh.Margin = new System.Windows.Forms.Padding(10);
+            this.dgvLoaiSanh.Name = "dgvLoaiSanh";
+            this.dgvLoaiSanh.RowHeadersWidth = 62;
+            this.dgvLoaiSanh.RowTemplate.Height = 28;
+            this.dgvLoaiSanh.Size = new System.Drawing.Size(606, 293);
+            this.dgvLoaiSanh.TabIndex = 1;
             // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel3.Controls.Add(this.label4);
-            this.flowLayoutPanel3.Controls.Add(this.textBox1);
+            this.flowLayoutPanel3.Controls.Add(this.txtMaSanh);
             this.flowLayoutPanel3.Controls.Add(this.label5);
-            this.flowLayoutPanel3.Controls.Add(this.textBox2);
+            this.flowLayoutPanel3.Controls.Add(this.txtTenSanh);
             this.flowLayoutPanel3.Controls.Add(this.label6);
-            this.flowLayoutPanel3.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel3.Controls.Add(this.cbMaLoaiSanh);
             this.flowLayoutPanel3.Controls.Add(this.label8);
-            this.flowLayoutPanel3.Controls.Add(this.numericUpDown2);
+            this.flowLayoutPanel3.Controls.Add(this.nupSoLuongBanMax);
             this.flowLayoutPanel3.Controls.Add(this.label7);
-            this.flowLayoutPanel3.Controls.Add(this.textBox3);
+            this.flowLayoutPanel3.Controls.Add(this.txtGhiChu);
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(10, 50);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(432, 414);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(455, 387);
             this.flowLayoutPanel3.TabIndex = 0;
+            this.flowLayoutPanel3.Click += new System.EventHandler(this.flowLayoutPanel3_Click);
             // 
             // label4
             // 
@@ -164,14 +176,14 @@ namespace NhanDatTiecCuoi.UserControls
             this.label4.TabIndex = 0;
             this.label4.Text = "Mã sảnh";
             // 
-            // textBox1
+            // txtMaSanh
             // 
-            this.textBox1.Location = new System.Drawing.Point(10, 30);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(404, 26);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtMaSanh.Location = new System.Drawing.Point(10, 30);
+            this.txtMaSanh.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.txtMaSanh.Name = "txtMaSanh";
+            this.txtMaSanh.ReadOnly = true;
+            this.txtMaSanh.Size = new System.Drawing.Size(404, 26);
+            this.txtMaSanh.TabIndex = 1;
             // 
             // label5
             // 
@@ -183,13 +195,13 @@ namespace NhanDatTiecCuoi.UserControls
             this.label5.TabIndex = 0;
             this.label5.Text = "Tên sảnh";
             // 
-            // textBox2
+            // txtTenSanh
             // 
-            this.textBox2.Location = new System.Drawing.Point(10, 91);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(404, 26);
-            this.textBox2.TabIndex = 1;
+            this.txtTenSanh.Location = new System.Drawing.Point(10, 91);
+            this.txtTenSanh.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.txtTenSanh.Name = "txtTenSanh";
+            this.txtTenSanh.Size = new System.Drawing.Size(404, 26);
+            this.txtTenSanh.TabIndex = 1;
             // 
             // label6
             // 
@@ -201,14 +213,14 @@ namespace NhanDatTiecCuoi.UserControls
             this.label6.TabIndex = 0;
             this.label6.Text = "Mã loại sảnh";
             // 
-            // comboBox1
+            // cbMaLoaiSanh
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(10, 152);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 28);
-            this.comboBox1.TabIndex = 2;
+            this.cbMaLoaiSanh.FormattingEnabled = true;
+            this.cbMaLoaiSanh.Location = new System.Drawing.Point(10, 152);
+            this.cbMaLoaiSanh.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.cbMaLoaiSanh.Name = "cbMaLoaiSanh";
+            this.cbMaLoaiSanh.Size = new System.Drawing.Size(125, 28);
+            this.cbMaLoaiSanh.TabIndex = 2;
             // 
             // label8
             // 
@@ -220,14 +232,14 @@ namespace NhanDatTiecCuoi.UserControls
             this.label8.TabIndex = 0;
             this.label8.Text = "Số lượng bàn tối đa";
             // 
-            // numericUpDown2
+            // nupSoLuongBanMax
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(10, 215);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown2.TabIndex = 4;
-            this.numericUpDown2.ValueChanged += new System.EventHandler(this.label4_Click);
+            this.nupSoLuongBanMax.Location = new System.Drawing.Point(10, 215);
+            this.nupSoLuongBanMax.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.nupSoLuongBanMax.Name = "nupSoLuongBanMax";
+            this.nupSoLuongBanMax.Size = new System.Drawing.Size(120, 26);
+            this.nupSoLuongBanMax.TabIndex = 4;
+            this.nupSoLuongBanMax.ValueChanged += new System.EventHandler(this.label4_Click);
             // 
             // label7
             // 
@@ -239,30 +251,66 @@ namespace NhanDatTiecCuoi.UserControls
             this.label7.TabIndex = 0;
             this.label7.Text = "Ghi chú";
             // 
-            // textBox3
+            // txtGhiChu
             // 
-            this.textBox3.Location = new System.Drawing.Point(10, 276);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(404, 26);
-            this.textBox3.TabIndex = 1;
+            this.txtGhiChu.Location = new System.Drawing.Point(10, 276);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(404, 26);
+            this.txtGhiChu.TabIndex = 1;
             // 
-            // button1
+            // btnCapNhat
             // 
-            this.button1.Location = new System.Drawing.Point(136, 375);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 38);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Cập nhật";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCapNhat.Location = new System.Drawing.Point(145, 375);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(121, 38);
+            this.btnCapNhat.TabIndex = 5;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = true;
+            // 
+            // btnThemMoi
+            // 
+            this.btnThemMoi.BackColor = System.Drawing.Color.Transparent;
+            this.btnThemMoi.Location = new System.Drawing.Point(20, 377);
+            this.btnThemMoi.Name = "btnThemMoi";
+            this.btnThemMoi.Size = new System.Drawing.Size(108, 34);
+            this.btnThemMoi.TabIndex = 18;
+            this.btnThemMoi.Text = "Thêm mới";
+            this.btnThemMoi.UseVisualStyleBackColor = false;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(278, 377);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(108, 34);
+            this.btnXoa.TabIndex = 17;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            // 
+            // epMaSanh
+            // 
+            this.epMaSanh.ContainerControl = this;
+            // 
+            // epTenSanh
+            // 
+            this.epTenSanh.ContainerControl = this;
+            // 
+            // epMaLoaiSanh
+            // 
+            this.epMaLoaiSanh.ContainerControl = this;
+            // 
+            // epSoLuongBanToiDa
+            // 
+            this.epSoLuongBanToiDa.ContainerControl = this;
             // 
             // ucDanhSachSanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnThemMoi);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.flowLayoutPanel4);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -270,15 +318,20 @@ namespace NhanDatTiecCuoi.UserControls
             this.Name = "ucDanhSachSanh";
             this.Size = new System.Drawing.Size(1074, 940);
             this.Load += new System.EventHandler(this.ucDanhSachSanh_Load);
+            this.Click += new System.EventHandler(this.ucDanhSachSanh_Click);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSanh)).EndInit();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiSanh)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupSoLuongBanMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMaSanh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epTenSanh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMaLoaiSanh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epSoLuongBanToiDa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,21 +342,27 @@ namespace NhanDatTiecCuoi.UserControls
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSanh;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvLoaiSanh;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMaSanh;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTenSanh;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbMaLoaiSanh;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nupSoLuongBanMax;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtGhiChu;
+        private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.Button btnThemMoi;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.ErrorProvider epMaSanh;
+        private System.Windows.Forms.ErrorProvider epTenSanh;
+        private System.Windows.Forms.ErrorProvider epMaLoaiSanh;
+        private System.Windows.Forms.ErrorProvider epSoLuongBanToiDa;
     }
 }

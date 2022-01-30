@@ -127,6 +127,7 @@ namespace NhanDatTiecCuoi.UserControls
 
         private void button4_Click(object sender, EventArgs e)
         {
+            this.Controls.Clear();
             ucThongTinChiTietDatBan uc = new ucThongTinChiTietDatBan();
             this.Controls.Add(uc);
             uc.BringToFront();
@@ -134,6 +135,7 @@ namespace NhanDatTiecCuoi.UserControls
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.Controls.Clear();
             ucThongTinChiTietDatDichVu uc = new ucThongTinChiTietDatDichVu();
             this.Controls.Add(uc);
             uc.BringToFront();

@@ -1,4 +1,5 @@
 ﻿using NhanDatTiecCuoi.Business;
+using NhanDatTiecCuoi.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,30 @@ namespace NhanDatTiecCuoi
 {
     public class DataProvider
     {
+        private static DSSANH _sANH = null;
+        public static DSSANH SANHs
+        {
+            get
+            {
+                if (_sANH == null)
+                {
+                    _sANH = new DSSANH();
+                }
+                return _sANH;
+            }
+        }
+        private static THAMSO _tHAMSO = null;
+        public static THAMSO tHAMSO
+        {
+            get
+            {
+                if (_tHAMSO == null)
+                {
+                    _tHAMSO = new THAMSO();
+                }
+                return _tHAMSO;
+            }
+        }
         private static DSMONAN _dSMONAN = null;
         public static DSMONAN dSMONAN
         {

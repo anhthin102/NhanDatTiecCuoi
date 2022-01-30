@@ -50,6 +50,7 @@
     <Compile Include="Business\DSDICHVU.cs" />
     <Compile Include="Business\DSLOAISANH.cs" />
     <Compile Include="Business\DSMONAN.cs" />
+    <Compile Include="Business\DSSANH.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Data\BAOCAO.cs" />

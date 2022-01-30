@@ -8,6 +8,19 @@ namespace NhanDatTiecCuoi.Data
 {
     public class SANH
     {
+        public SANH()
+        {
+
+        }
+        public SANH(string MaSanh, string TenSanh, string MaLoaiSanh, int SLBanToiDa, string GhiChu)
+        {
+            this.MaSanh = MaSanh;
+            this.TenSanh = TenSanh;
+            this.MaLoaiSanh = MaLoaiSanh;
+            this.SLBanToiDa = SLBanToiDa;
+            this.GhiChu = GhiChu;
+        }
+        
         private string _MaSanh = "";
         public string MaSanh
         {

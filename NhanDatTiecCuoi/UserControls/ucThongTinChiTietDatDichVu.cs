@@ -29,6 +29,7 @@ namespace NhanDatTiecCuoi.UserControls
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Controls.Clear();
             ucDatTiecCuoi datTiecCuoi = new ucDatTiecCuoi();
             this.Controls.Add(datTiecCuoi);
             datTiecCuoi.BringToFront();
