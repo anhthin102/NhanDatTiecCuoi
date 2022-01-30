@@ -105,10 +105,14 @@ namespace NhanDatTiecCuoi.UserControls
 
         private void dgvSanh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtMaLoaiSanh.Text = dgvSanh.Rows[e.RowIndex].Cells[0].Value.ToString();
-            LOAISANH ls = DataProvider.SLOAISANH.LayThongTinTheoMa(txtMaLoaiSanh.Text);
-            txtTenLoaiSanh.Text = ls.TenLoaiSanh;
-            txtDonGiaBanToiThieu.Text = ls.DonGiaBanToiThieu.ToString();
+            if (e.RowIndex >= 0 && e.RowIndex < dgvSanh.RowCount - 1)
+            {
+                txtMaLoaiSanh.Text = dgvSanh.Rows[e.RowIndex].Cells[1].Value.ToString();
+                LOAISANH ls = DataProvider.SLOAISANH.LayThongTinTheoMa(txtMaLoaiSanh.Text);
+                txtTenLoaiSanh.Text = ls.TenLoaiSanh;
+                txtDonGiaBanToiThieu.Text = ls.DonGiaBanToiThieu.ToString();
+            }
+                
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)

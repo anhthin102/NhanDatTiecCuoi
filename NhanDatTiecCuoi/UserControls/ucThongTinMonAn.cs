@@ -71,7 +71,14 @@ namespace NhanDatTiecCuoi.UserControls
 
         private void dgvMonAn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            ReLoadMa();
+            if (e.RowIndex >= 0 && e.RowIndex < dgvMonAn.RowCount - 1)
+            {
+                txtMaMonAn.Text = dgvMonAn.Rows[e.RowIndex].Cells[1].Value.ToString();
+                MONAN dv = DataProvider.dSMONAN.LayThongTinTheoMa(txtMaMonAn.Text);
+                txtTenMonAn.Text = dv.TenMonAn;
+                txtDonGia.Text = dv.DonGia.ToString();
+                txtGhiChu.Text = dv.GhiChu;
+            }
         }
 
         private void btnThemMoi_Click(object sender, EventArgs e)
@@ -157,6 +164,21 @@ namespace NhanDatTiecCuoi.UserControls
                 }
 
             }
+        }
+
+        private void ucThongTinMonAn_Click(object sender, EventArgs e)
+        {
+            ReLoadMa();
+        }
+
+        private void flowLayoutPanel3_Click(object sender, EventArgs e)
+        {
+            ReLoadMa();
+        }
+
+        private void flowLayoutPanel1_Click(object sender, EventArgs e)
+        {
+            ReLoadMa();
         }
     }
 }

@@ -62,10 +62,14 @@ namespace NhanDatTiecCuoi.UserControls
 
         private void dgvCa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtMaCa.Text = dgvCa.Rows[e.RowIndex].Cells[0].Value.ToString();
-            CA ca = DataProvider.SCA.LayThongTinTheoMa(txtMaCa.Text);
-            txtMaCa.Text = ca.MaCa;
-            txtLoaiCa.Text = ca.LoaiCa;
+            if (e.RowIndex >= 0 && e.RowIndex < dgvCa.RowCount - 1)
+            {
+                txtMaCa.Text = dgvCa.Rows[e.RowIndex].Cells[1].Value.ToString();
+                CA ca = DataProvider.SCA.LayThongTinTheoMa(txtMaCa.Text);
+                txtMaCa.Text = ca.MaCa;
+                txtLoaiCa.Text = ca.LoaiCa;
+            }
+                
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)

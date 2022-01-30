@@ -84,6 +84,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(530, 311);
             this.flowLayoutPanel3.TabIndex = 8;
+            this.flowLayoutPanel3.Click += new System.EventHandler(this.flowLayoutPanel3_Click);
             // 
             // label4
             // 
@@ -167,6 +168,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1074, 473);
             this.flowLayoutPanel1.TabIndex = 9;
+            this.flowLayoutPanel1.Click += new System.EventHandler(this.flowLayoutPanel1_Click);
             // 
             // label2
             // 
@@ -248,6 +250,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.Name = "ucThongTinMonAn";
             this.Size = new System.Drawing.Size(1074, 940);
             this.Load += new System.EventHandler(this.ucThongTinMonAn_Load);
+            this.Click += new System.EventHandler(this.ucThongTinMonAn_Click);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);

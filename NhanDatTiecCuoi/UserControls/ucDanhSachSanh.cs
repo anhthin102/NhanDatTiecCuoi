@@ -156,7 +156,7 @@ namespace NhanDatTiecCuoi.UserControls
         {
             if(e.RowIndex >=0 && e.RowIndex < dgvSanh.RowCount-1)
             {
-                txtMaSanh.Text = dgvSanh.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtMaSanh.Text = dgvSanh.Rows[e.RowIndex].Cells[1].Value.ToString();
                 SANH dv = DataProvider.SANHs.LayThongTinTheoMa(txtMaSanh.Text);
                 txtTenSanh.Text = dv.TenSanh;
                 cbMaLoaiSanh.SelectedItem = dv.MaLoaiSanh;

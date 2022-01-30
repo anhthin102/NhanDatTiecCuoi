@@ -74,11 +74,15 @@ namespace NhanDatTiecCuoi.UserControls
         }
         private void dgvDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtMaDichVu.Text = dgvDichVu.Rows[e.RowIndex].Cells[0].Value.ToString();
-            DICHVU dv = DataProvider.dSDICHVU.LayThongTinTheoMa(txtMaDichVu.Text);
-            txtTenDichVu.Text = dv.TenDichVu;
-            txtDonGia.Text = dv.DonGia.ToString();
-            txtGhiChu.Text = dv.GhiChu;
+            if (e.RowIndex >= 0 && e.RowIndex < dgvDichVu.RowCount - 1)
+            {
+                txtMaDichVu.Text = dgvDichVu.Rows[e.RowIndex].Cells[1].Value.ToString();
+                DICHVU dv = DataProvider.dSDICHVU.LayThongTinTheoMa(txtMaDichVu.Text);
+                txtTenDichVu.Text = dv.TenDichVu;
+                txtDonGia.Text = dv.DonGia.ToString();
+                txtGhiChu.Text = dv.GhiChu;
+            }
+                
         }
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
