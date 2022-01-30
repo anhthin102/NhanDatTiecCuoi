@@ -77,6 +77,24 @@ namespace NhanDatTiecCuoi.UserControls
         private bool inputvalidate()
         {
             int err = 0;
+            if (string.IsNullOrEmpty(txtTenSanh.Text))
+            {
+                epTenSanh.SetError(txtTenSanh, "Vui Lòng nhập tên sảnh");
+                err++;
+            }
+            else
+            {
+                epTenSanh.SetError(txtTenSanh, "");
+            }
+            if (nupSoLuongBanMax.Value == 0)
+            {
+                epSoLuongBanToiDa.SetError(nupSoLuongBanMax, "Vui lòng nhập số lượng bàn tối đa");
+                err++;
+            }
+            else
+            {
+                epSoLuongBanToiDa.SetError(nupSoLuongBanMax, "");
+            }
             if (err == 0)
             {
                 return true;
@@ -132,6 +150,19 @@ namespace NhanDatTiecCuoi.UserControls
         {
             HienThiDanhSachLoaiSanh();
             ReLoadMa();
+        }
+
+        private void dgvSanh_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >=0 && e.RowIndex < dgvSanh.RowCount-1)
+            {
+                txtMaSanh.Text = dgvSanh.Rows[e.RowIndex].Cells[0].Value.ToString();
+                SANH dv = DataProvider.SANHs.LayThongTinTheoMa(txtMaSanh.Text);
+                txtTenSanh.Text = dv.TenSanh;
+                cbMaLoaiSanh.SelectedItem = dv.MaLoaiSanh;
+                nupSoLuongBanMax.Value = dv.SLBanToiDa;
+                txtGhiChu.Text = dv.GhiChu;
+            }
         }
     }
 }

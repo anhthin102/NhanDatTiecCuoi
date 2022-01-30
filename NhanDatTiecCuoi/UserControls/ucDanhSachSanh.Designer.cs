@@ -110,6 +110,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.dgvSanh.RowTemplate.Height = 28;
             this.dgvSanh.Size = new System.Drawing.Size(1054, 281);
             this.dgvSanh.TabIndex = 1;
+            this.dgvSanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanh_CellClick);
             // 
             // flowLayoutPanel4
             // 
