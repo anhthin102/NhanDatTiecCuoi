@@ -268,6 +268,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.btnCapNhat.TabIndex = 5;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnThemMoi
             // 
@@ -278,6 +279,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.btnThemMoi.TabIndex = 18;
             this.btnThemMoi.Text = "Thêm mới";
             this.btnThemMoi.UseVisualStyleBackColor = false;
+            this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
             // btnXoa
             // 
@@ -287,6 +289,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.btnXoa.TabIndex = 17;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // epMaSanh
             // 

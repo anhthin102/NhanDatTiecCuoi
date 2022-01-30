@@ -18,7 +18,7 @@ namespace NhanDatTiecCuoi.UserControls
             InitializeComponent();
         }
 
-       
+
         public void HienThiDanhSachLoaiSanh()
         {
             List<LOAISANH> dsSanh = DataProvider.SLOAISANH.LayDS();
@@ -31,7 +31,7 @@ namespace NhanDatTiecCuoi.UserControls
             dgvLoaiSanh.Columns[1].HeaderText = "Mã Loại Sảnh";
             dgvLoaiSanh.Columns[2].HeaderText = "Tên Loại Sảnh";
             dgvLoaiSanh.Columns[3].HeaderText = "Đơn giá bàn Tối thiểu";
-            
+
         }
         private void HienThiDanhSach()
         {
@@ -44,9 +44,9 @@ namespace NhanDatTiecCuoi.UserControls
             dgvSanh.DataSource = data;
             dgvSanh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             List<LOAISANH> dsLoaiSanh = DataProvider.SLOAISANH.LayDS();
-            for(int i= 0; i<dsSanh.Count; i++)
+            for (int i = 0; i < dsSanh.Count; i++)
             {
-                for (int j = 0; j<dsLoaiSanh.Count; j++)
+                for (int j = 0; j < dsLoaiSanh.Count; j++)
                 {
                     if (dsSanh[i].MaLoaiSanh == dsLoaiSanh[j].MaLoaiSanh)
                     {
@@ -55,19 +55,19 @@ namespace NhanDatTiecCuoi.UserControls
                     }
                 }
             }
-            
+
         }
         private void ReLoadMa()
         {
             txtMaSanh.Text = DataProvider.SANHs.LayMaMoi().ToString();
             List<LOAISANH> dsLoaiSanh = DataProvider.SLOAISANH.LayDS();
             cbMaLoaiSanh.Items.Clear();
-            foreach(LOAISANH ls in dsLoaiSanh)
+            foreach (LOAISANH ls in dsLoaiSanh)
             {
                 cbMaLoaiSanh.Items.Add(ls.MaLoaiSanh);
             }
             cbMaLoaiSanh.Text = cbMaLoaiSanh.Items[0].ToString();
-           
+
         }
         private void ucDanhSachSanh_Load(object sender, EventArgs e)
         {
@@ -75,7 +75,7 @@ namespace NhanDatTiecCuoi.UserControls
             HienThiDanhSach();
             ReLoadMa();
         }
-        private bool inputvalidate()
+        private bool InputValidate()
         {
             int err = 0;
             if (string.IsNullOrEmpty(txtTenSanh.Text))
@@ -159,7 +159,7 @@ namespace NhanDatTiecCuoi.UserControls
 
         private void dgvSanh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >=0 && e.RowIndex < dgvSanh.RowCount-1)
+            if (e.RowIndex >= 0 && e.RowIndex < dgvSanh.RowCount - 1)
             {
                 txtMaSanh.Text = dgvSanh.Rows[e.RowIndex].Cells[1].Value.ToString();
                 SANH dv = DataProvider.SANHs.LayThongTinTheoMa(txtMaSanh.Text);
@@ -167,6 +167,93 @@ namespace NhanDatTiecCuoi.UserControls
                 cbMaLoaiSanh.SelectedItem = dv.MaLoaiSanh;
                 nupSoLuongBanMax.Value = dv.SLBanToiDa;
                 txtGhiChu.Text = dv.GhiChu;
+            }
+        }
+
+        private void btnThemMoi_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtMaSanh.Text) != DataProvider.SANHs.LayMaMoi())
+            {
+                epMaSanh.SetError(txtMaSanh, "Nhấn vào form để load lại mã sảnh mới");
+                return;
+            }
+            else
+            {
+                epMaSanh.SetError(txtMaSanh, "");
+            }
+            if (InputValidate() == true)
+            {
+                SANH s = new SANH();
+                s.MaSanh = txtMaSanh.Text;
+                s.TenSanh = txtTenSanh.Text;
+                s.MaLoaiSanh = cbMaLoaiSanh.Text;
+                s.SLBanToiDa = Convert.ToInt32(nupSoLuongBanMax.Value);
+                s.GhiChu = txtGhiChu.Text;
+                bool kq = DataProvider.SANHs.ThemMoi(s);
+                if (kq == true)
+                {
+                    MessageBox.Show("Thêm mới sảnh thành công");
+                    DataProvider.SANHs.ThemMaMoi();
+                }
+                HienThiDanhSach();
+                ReLoadMa();
+            }
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtMaSanh.Text) == DataProvider.SANHs.LayMaMoi())
+            {
+                epMaSanh.SetError(txtMaSanh, "Nhấn vào Bảng để chọn sảnh cần sửa");
+                return;
+            }
+            else
+            {
+                epMaSanh.SetError(txtMaSanh, "");
+            }
+            if (InputValidate() == true)
+            {
+                SANH s = new SANH();
+                s.MaSanh = txtMaSanh.Text;
+                s.TenSanh = txtTenSanh.Text;
+                s.MaLoaiSanh = cbMaLoaiSanh.Text;
+                s.SLBanToiDa = Convert.ToInt32(nupSoLuongBanMax.Value);
+                s.GhiChu = txtGhiChu.Text;
+                bool kq = DataProvider.SANHs.CapNhatThongTin(s);
+                if (kq == true)
+                {
+                    MessageBox.Show("Cập nhật sảnh " + txtMaSanh.Text + " thành công");
+                }
+                HienThiDanhSach();
+                ReLoadMa();
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtMaSanh.Text) == DataProvider.SANHs.LayMaMoi())
+            {
+                epMaSanh.SetError(txtMaSanh, "Nhấn vào Bảng để chọn loại sảnh cần xóa");
+                return;
+            }
+            else
+            {
+                epMaSanh.SetError(txtMaSanh, "");
+            }
+            if (InputValidate() == true)
+            {
+                SANH dv = DataProvider.SANHs.LayThongTinTheoMa(txtMaSanh.Text);
+                if (MessageBox.Show("Bạn có muốn xóa sảnh " + txtMaSanh.Text + " hay không?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    bool kq = DataProvider.SANHs.Xoa(dv);
+                    if (kq == true)
+                    {
+                        MessageBox.Show("Xóa loại sảnh " + txtMaSanh.Text + " thành công");
+                    }
+                    HienThiDanhSach();
+                    ReLoadMa();
+                }
+
             }
         }
     }
