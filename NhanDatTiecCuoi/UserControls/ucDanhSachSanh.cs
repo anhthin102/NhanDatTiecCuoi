@@ -61,6 +61,7 @@ namespace NhanDatTiecCuoi.UserControls
         {
             txtMaSanh.Text = DataProvider.SANHs.LayMaMoi().ToString();
             List<LOAISANH> dsLoaiSanh = DataProvider.SLOAISANH.LayDS();
+            cbMaLoaiSanh.Items.Clear();
             foreach(LOAISANH ls in dsLoaiSanh)
             {
                 cbMaLoaiSanh.Items.Add(ls.MaLoaiSanh);
@@ -132,24 +133,28 @@ namespace NhanDatTiecCuoi.UserControls
         {
             HienThiDanhSachLoaiSanh();
             ReLoadMa();
+            HienThiDanhSach();
         }
 
         private void flowLayoutPanel4_Click(object sender, EventArgs e)
         {
             HienThiDanhSachLoaiSanh();
             ReLoadMa();
+            HienThiDanhSach();
         }
 
         private void flowLayoutPanel3_Click(object sender, EventArgs e)
         {
             HienThiDanhSachLoaiSanh();
             ReLoadMa();
+            HienThiDanhSach();
         }
 
         private void flowLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
         {
             HienThiDanhSachLoaiSanh();
             ReLoadMa();
+            HienThiDanhSach();
         }
 
         private void dgvSanh_CellClick(object sender, DataGridViewCellEventArgs e)

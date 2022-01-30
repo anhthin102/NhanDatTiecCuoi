@@ -1,4 +1,5 @@
-﻿using NhanDatTiecCuoi.Data;
+﻿using NhanDatTiecCuoi.Business;
+using NhanDatTiecCuoi.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -156,6 +157,15 @@ namespace NhanDatTiecCuoi.UserControls
             }
             if (InputValidate() == true)
             {
+                List<SANH> s = DataProvider.SANHs.LayDS();
+                foreach(SANH sANH in s)
+                {
+                    if (sANH.MaLoaiSanh == txtMaLoaiSanh.Text)
+                    {
+                        MessageBox.Show("Không thể xóa do có sảnh trong loại sảnh này");
+                        return;
+                    }
+                }
                 LOAISANH ls = DataProvider.SLOAISANH.LayThongTinTheoMa(txtMaLoaiSanh.Text);
                 if (MessageBox.Show("Bạn có muốn xóa loại sảnh " + txtMaLoaiSanh.Text + " hay không?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
