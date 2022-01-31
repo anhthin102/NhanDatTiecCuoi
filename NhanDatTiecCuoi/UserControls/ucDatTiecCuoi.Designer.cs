@@ -502,6 +502,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.btnThanhToan.TabIndex = 12;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // flowLayoutPanel7
             // 

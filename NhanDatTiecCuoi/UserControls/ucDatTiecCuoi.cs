@@ -541,5 +541,14 @@ namespace NhanDatTiecCuoi.UserControls
                 }
             }
         }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            ucHoaDon uc = new ucHoaDon();
+            uc.MaTiecCuoi = dgvTiecCuoi.CurrentRow.Cells[1].Value.ToString();
+            this.Controls.Add(uc);
+            uc.BringToFront();
+        }
     }
 }
