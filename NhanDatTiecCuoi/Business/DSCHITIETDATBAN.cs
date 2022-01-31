@@ -27,7 +27,15 @@ namespace NhanDatTiecCuoi.Business
         }
         public bool CapNhatThongTin(CTDATBAN ds)
         {
-            throw new NotImplementedException();
+            for(int i=0; i<_cTDATBANs.Count; i++)
+            {
+                if ((ds.MaTiecCuoi == _cTDATBANs[i].MaTiecCuoi) && (ds.MaMonAn == _cTDATBANs[i].MaMonAn))
+                {
+                    _cTDATBANs[i] = ds;
+                    return true;
+                }
+            }
+            return false;
         }
 
         public List<CTDATBAN> LayDS()
@@ -48,7 +56,18 @@ namespace NhanDatTiecCuoi.Business
         {
             throw new NotImplementedException();
         }
-
+        public List<CTDATBAN> LayDSTheoMa(string ma)
+        {
+            List<CTDATBAN> cTDATBANs = new List<CTDATBAN>();
+            foreach(CTDATBAN  c in _cTDATBANs)
+            {
+                if (ma == c.MaTiecCuoi)
+                {
+                    cTDATBANs.Add(c);
+                }
+            }
+            return cTDATBANs;
+        }
         public void ThemMaMoi()
         {
             throw new NotImplementedException();
@@ -56,12 +75,22 @@ namespace NhanDatTiecCuoi.Business
 
         public bool ThemMoi(CTDATBAN ds)
         {
-            throw new NotImplementedException();
+            if (ds != null)
+            {
+                _cTDATBANs.Add(ds);
+                return true;
+            }
+            return false;
         }
 
         public bool Xoa(CTDATBAN ds)
         {
-            throw new NotImplementedException();
+            if (ds != null)
+            {
+                _cTDATBANs.Remove(ds);
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -23,7 +23,15 @@ namespace NhanDatTiecCuoi.Business
         }
         public bool CapNhatThongTin(CTDATDICHVU ds)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < _cTDATDICHVUs.Count; i++)
+            {
+                if ((ds.MaTiecCuoi == _cTDATDICHVUs[i].MaTiecCuoi) && (ds.MaDichVu == _cTDATDICHVUs[i].MaDichVu))
+                {
+                    _cTDATDICHVUs[i] = ds;
+                    return true;
+                }
+            }
+            return false;
         }
 
         public List<CTDATDICHVU> LayDS()
@@ -44,7 +52,18 @@ namespace NhanDatTiecCuoi.Business
         {
             throw new NotImplementedException();
         }
-
+        public List<CTDATDICHVU> LayDSTheoMa(string ma)
+        {
+            List<CTDATDICHVU> cTDATDICHVUs = new List<CTDATDICHVU>();
+            foreach (CTDATDICHVU c in _cTDATDICHVUs)
+            {
+                if (ma == c.MaTiecCuoi)
+                {
+                    cTDATDICHVUs.Add(c);
+                }
+            }
+            return cTDATDICHVUs;
+        }
         public void ThemMaMoi()
         {
             throw new NotImplementedException();
@@ -52,12 +71,22 @@ namespace NhanDatTiecCuoi.Business
 
         public bool ThemMoi(CTDATDICHVU ds)
         {
-            throw new NotImplementedException();
+            if (ds != null)
+            {
+                _cTDATDICHVUs.Add(ds);
+                return true;
+            }
+            return false;
         }
 
         public bool Xoa(CTDATDICHVU ds)
         {
-            throw new NotImplementedException();
+            if (ds != null)
+            {
+                _cTDATDICHVUs.Remove(ds);
+                return true;
+            }
+            return false;
         }
     }
 }

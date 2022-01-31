@@ -31,16 +31,18 @@ namespace NhanDatTiecCuoi.UserControls
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.txtTenCoDau = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtTenChuRe = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMaTiecCuoi = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvTiecCuoi = new System.Windows.Forms.DataGridView();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTiecCuoi)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,12 +58,12 @@ namespace NhanDatTiecCuoi.UserControls
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.btnTimKiem);
+            this.groupBox1.Controls.Add(this.txtTenCoDau);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtTenChuRe);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtMaTiecCuoi);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(3, 74);
             this.groupBox1.Name = "groupBox1";
@@ -70,46 +72,22 @@ namespace NhanDatTiecCuoi.UserControls
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm tiệc cưới";
             // 
-            // label2
+            // btnTimKiem
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã tiệc cưới: ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.btnTimKiem.Location = new System.Drawing.Point(947, 61);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(93, 31);
+            this.btnTimKiem.TabIndex = 8;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // textBox1
+            // txtTenCoDau
             // 
-            this.textBox1.Location = new System.Drawing.Point(114, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(119, 26);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(369, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 26);
-            this.textBox2.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(261, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Tên chú rể:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(704, 36);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(191, 26);
-            this.textBox3.TabIndex = 7;
+            this.txtTenCoDau.Location = new System.Drawing.Point(704, 36);
+            this.txtTenCoDau.Name = "txtTenCoDau";
+            this.txtTenCoDau.Size = new System.Drawing.Size(191, 26);
+            this.txtTenCoDau.TabIndex = 7;
             // 
             // label4
             // 
@@ -120,32 +98,76 @@ namespace NhanDatTiecCuoi.UserControls
             this.label4.TabIndex = 6;
             this.label4.Text = "Tên cô dâu:";
             // 
-            // button1
+            // txtTenChuRe
             // 
-            this.button1.Location = new System.Drawing.Point(947, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 31);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtTenChuRe.Location = new System.Drawing.Point(369, 36);
+            this.txtTenChuRe.Name = "txtTenChuRe";
+            this.txtTenChuRe.Size = new System.Drawing.Size(194, 26);
+            this.txtTenChuRe.TabIndex = 5;
             // 
-            // dataGridView1
+            // label3
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 208);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1019, 649);
-            this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(261, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Tên chú rể:";
+            // 
+            // txtMaTiecCuoi
+            // 
+            this.txtMaTiecCuoi.Location = new System.Drawing.Point(114, 39);
+            this.txtMaTiecCuoi.Name = "txtMaTiecCuoi";
+            this.txtMaTiecCuoi.Size = new System.Drawing.Size(119, 26);
+            this.txtMaTiecCuoi.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Mã tiệc cưới: ";
+            // 
+            // dgvTiecCuoi
+            // 
+            this.dgvTiecCuoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTiecCuoi.Location = new System.Drawing.Point(24, 208);
+            this.dgvTiecCuoi.Name = "dgvTiecCuoi";
+            this.dgvTiecCuoi.RowHeadersWidth = 62;
+            this.dgvTiecCuoi.RowTemplate.Height = 28;
+            this.dgvTiecCuoi.Size = new System.Drawing.Size(1019, 649);
+            this.dgvTiecCuoi.TabIndex = 10;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(922, 878);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(121, 38);
+            this.btnXoa.TabIndex = 19;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(795, 878);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(121, 38);
+            this.btnSua.TabIndex = 20;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // ucDanhSachTiecCuoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.dgvTiecCuoi);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "ucDanhSachTiecCuoi";
@@ -153,7 +175,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.Load += new System.EventHandler(this.ucDanhSachTiecCuoi_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTiecCuoi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,12 +186,14 @@ namespace NhanDatTiecCuoi.UserControls
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtMaTiecCuoi;
+        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.TextBox txtTenCoDau;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTenChuRe;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTiecCuoi;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
     }
 }

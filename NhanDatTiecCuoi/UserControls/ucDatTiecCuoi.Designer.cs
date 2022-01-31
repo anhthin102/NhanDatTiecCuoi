@@ -86,6 +86,10 @@ namespace NhanDatTiecCuoi.UserControls
             this.epSDT = new System.Windows.Forms.ErrorProvider(this.components);
             this.epTienDatCoc = new System.Windows.Forms.ErrorProvider(this.components);
             this.epSoLuongBan = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epSoBanDuTru = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epNgayDaiTiec = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epMaCa = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epMaSanh = new System.Windows.Forms.ErrorProvider(this.components);
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCa)).BeginInit();
@@ -103,6 +107,10 @@ namespace NhanDatTiecCuoi.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.epSDT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epTienDatCoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epSoLuongBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epSoBanDuTru)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNgayDaiTiec)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMaCa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMaSanh)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCapNhat
@@ -113,7 +121,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.btnCapNhat.TabIndex = 10;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
-            this.btnCapNhat.Click += new System.EventHandler(this.button1_Click);
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // flowLayoutPanel3
             // 
@@ -164,7 +172,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Tên chú rể";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtTenChuRe
             // 
@@ -201,7 +208,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.label8.Size = new System.Drawing.Size(41, 20);
             this.label8.TabIndex = 0;
             this.label8.Text = "SĐT";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtSDT
             // 
@@ -220,7 +226,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.label7.Size = new System.Drawing.Size(101, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "Ngày đặt tiệc";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // dtpNgayDatTiec
             // 
@@ -241,7 +246,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.label9.Size = new System.Drawing.Size(99, 20);
             this.label9.TabIndex = 0;
             this.label9.Text = "Ngày đãi tiệc";
-            this.label9.Click += new System.EventHandler(this.label7_Click);
             // 
             // dtpNgayDaiTiec
             // 
@@ -287,7 +291,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.dgvCa.RowTemplate.Height = 28;
             this.dgvCa.Size = new System.Drawing.Size(606, 140);
             this.dgvCa.TabIndex = 1;
-            this.dgvCa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // label16
             // 
@@ -309,7 +312,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.dgvSanh.RowTemplate.Height = 28;
             this.dgvSanh.Size = new System.Drawing.Size(606, 164);
             this.dgvSanh.TabIndex = 1;
-            this.dgvSanh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // flowLayoutPanel1
             // 
@@ -343,7 +345,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.dgvTiecCuoi.Size = new System.Drawing.Size(1054, 192);
             this.dgvTiecCuoi.TabIndex = 1;
             this.dgvTiecCuoi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTiecCuoi_CellClick);
-            this.dgvTiecCuoi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -355,7 +356,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.label1.TabIndex = 7;
             this.label1.Text = "THÔNG TIN ĐẶT TIỆC CƯỚI";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // flowLayoutPanel2
             // 
@@ -471,6 +471,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.cboMaCa.Name = "cboMaCa";
             this.cboMaCa.Size = new System.Drawing.Size(167, 28);
             this.cboMaCa.TabIndex = 2;
+            this.cboMaCa.DropDown += new System.EventHandler(this.cboMaCa_DropDown);
             // 
             // label15
             // 
@@ -510,7 +511,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Size = new System.Drawing.Size(534, 213);
             this.flowLayoutPanel7.TabIndex = 15;
-            this.flowLayoutPanel7.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel7_Paint);
+            this.flowLayoutPanel7.Click += new System.EventHandler(this.flowLayoutPanel7_Click);
             // 
             // btnChinhSuaDV
             // 
@@ -543,7 +544,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.dgvDatDichVu.RowTemplate.Height = 28;
             this.dgvDatDichVu.Size = new System.Drawing.Size(524, 114);
             this.dgvDatDichVu.TabIndex = 1;
-            this.dgvDatDichVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellContentClick);
             // 
             // flowLayoutPanel5
             // 
@@ -556,7 +556,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(514, 213);
             this.flowLayoutPanel5.TabIndex = 16;
-            this.flowLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel5_Paint_1);
+            this.flowLayoutPanel5.Click += new System.EventHandler(this.flowLayoutPanel5_Click);
             // 
             // btnChinhSuaBan
             // 
@@ -589,7 +589,6 @@ namespace NhanDatTiecCuoi.UserControls
             this.dgvDatBan.RowTemplate.Height = 28;
             this.dgvDatBan.Size = new System.Drawing.Size(497, 111);
             this.dgvDatBan.TabIndex = 1;
-            this.dgvDatBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick_1);
             // 
             // button2
             // 
@@ -608,6 +607,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.btnThemMoi.TabIndex = 17;
             this.btnThemMoi.Text = "Thêm mới";
             this.btnThemMoi.UseVisualStyleBackColor = true;
+            this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
             // btnXoa
             // 
@@ -617,6 +617,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.btnXoa.TabIndex = 18;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnXoaBan
             // 
@@ -659,6 +660,22 @@ namespace NhanDatTiecCuoi.UserControls
             // epSoLuongBan
             // 
             this.epSoLuongBan.ContainerControl = this;
+            // 
+            // epSoBanDuTru
+            // 
+            this.epSoBanDuTru.ContainerControl = this;
+            // 
+            // epNgayDaiTiec
+            // 
+            this.epNgayDaiTiec.ContainerControl = this;
+            // 
+            // epMaCa
+            // 
+            this.epMaCa.ContainerControl = this;
+            // 
+            // epMaSanh
+            // 
+            this.epMaSanh.ContainerControl = this;
             // 
             // ucDatTiecCuoi
             // 
@@ -705,6 +722,10 @@ namespace NhanDatTiecCuoi.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.epSDT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epTienDatCoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epSoLuongBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epSoBanDuTru)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNgayDaiTiec)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMaCa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMaSanh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -768,5 +789,9 @@ namespace NhanDatTiecCuoi.UserControls
         private System.Windows.Forms.ErrorProvider epSDT;
         private System.Windows.Forms.ErrorProvider epTienDatCoc;
         private System.Windows.Forms.ErrorProvider epSoLuongBan;
+        private System.Windows.Forms.ErrorProvider epSoBanDuTru;
+        private System.Windows.Forms.ErrorProvider epNgayDaiTiec;
+        private System.Windows.Forms.ErrorProvider epMaCa;
+        private System.Windows.Forms.ErrorProvider epMaSanh;
     }
 }

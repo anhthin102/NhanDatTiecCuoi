@@ -25,7 +25,15 @@ namespace NhanDatTiecCuoi.Business
         }
         public bool CapNhatThongTin(TIECCUOI ds)
         {
-            throw new NotImplementedException();
+            for(int i=0; i < _tIECCUOIs.Count; i++)
+            {
+                if (ds.MaTiecCuoi == _tIECCUOIs[i].MaTiecCuoi)
+                {
+                    _tIECCUOIs[i] = ds;
+                    return true;
+                }
+            }
+            return false;
         }
 
         public List<TIECCUOI> LayDS()
@@ -39,7 +47,7 @@ namespace NhanDatTiecCuoi.Business
 
         public int LayMaMoi()
         {
-            return ma + 1;
+            return (ma + 1);
         }
 
         public TIECCUOI LayThongTinTheoMa(string ma)
@@ -63,12 +71,22 @@ namespace NhanDatTiecCuoi.Business
 
         public bool ThemMoi(TIECCUOI ds)
         {
-            throw new NotImplementedException();
+            if (ds != null)
+            {
+                _tIECCUOIs.Add(ds);
+                return true;
+            }
+            return false;
         }
 
         public bool Xoa(TIECCUOI ds)
         {
-            throw new NotImplementedException();
+            if (ds != null)
+            {
+                _tIECCUOIs.Remove(ds);
+                return true;
+            }
+            return false;
         }
     }
 }

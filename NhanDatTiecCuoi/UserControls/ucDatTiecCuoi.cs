@@ -13,7 +13,12 @@ namespace NhanDatTiecCuoi.UserControls
 {
     public partial class ucDatTiecCuoi : UserControl
     {
-       
+        private string _MaTiecCuoi = "";
+        public string MaTiecCuoi
+        {
+            get { return _MaTiecCuoi; }
+            set { _MaTiecCuoi = value; }
+        }
         public ucDatTiecCuoi()
         {
             InitializeComponent();
@@ -44,6 +49,7 @@ namespace NhanDatTiecCuoi.UserControls
                     }
                 }
             }
+           
             
         }
         private void HienThiDanhSachCacLoaiCa()
@@ -67,6 +73,40 @@ namespace NhanDatTiecCuoi.UserControls
             dgvTiecCuoi.DataSource = null;
             dgvTiecCuoi.DataSource = data;
             //dgvTiecCuoi.Columns[5].DefaultCellStyle.Format = "dd/MM/yyyy";
+            if (!string.IsNullOrEmpty(_MaTiecCuoi))
+            {
+                int index = 0;
+                for (int i = 0; i <tIECCUOIs.Count; i++)
+                {
+                    if (tIECCUOIs[i].MaTiecCuoi == _MaTiecCuoi)
+                    {
+                        index = i;
+                        break;
+                    }
+                }
+                if (index >= 0 && index < dgvTiecCuoi.RowCount - 1)
+                    {
+                        txtMaTiecCuoi.Text = dgvTiecCuoi.Rows[index].Cells[1].Value.ToString();
+                        TIECCUOI tc = DataProvider.dSTIECCUOI.LayThongTinTheoMa(txtMaTiecCuoi.Text);
+                        txtMaTiecCuoi.Text = tc.MaTiecCuoi;
+                        txtTenChuRe.Text = tc.TenChuRe;
+                        txtTenCoDau.Text = tc.TenCoDau;
+                        txtSDT.Text = tc.SDT;
+                        dtpNgayDatTiec.Value = tc.NgayDatTiec;
+                        dtpNgayDaiTiec.Value = tc.NgayDaiTiec;
+                        txtTienDatCoc.Text = tc.TienDatCoc.ToString();
+                        txtSoLuongBan.Text = tc.SoLuongBan.ToString();
+                        txtSoBanDuTru.Text = tc.SoBanDuTru.ToString();
+                        txtDonGiaBan.Text = tc.DonGiaBan.ToString();
+                        cboMaCa.SelectedItem = tc.MaCa;
+                        HienThiMaSanh();
+                        cboMaSanh.Items.Add(tc.MaSanh);
+                        cboMaSanh.SelectedItem = tc.MaSanh;
+                        string a = dgvTiecCuoi.Rows[index].Cells[1].Value.ToString();
+                        HienThiDanhSachChiTietDatBan(a);
+                        HienThiDanhSachChiTietDichVu(a);
+                    }
+            }
 
         }
         private void HienThiDanhSachChiTietDatBan(string a)
@@ -133,7 +173,7 @@ namespace NhanDatTiecCuoi.UserControls
         }
         private void ReLoadMa()
         {
-            txtSoBanDuTru.Text = "0";
+            txtSoBanDuTru.Text = "1";
             txtMaTiecCuoi.Text = DataProvider.dSTIECCUOI.LayMaMoi().ToString();
             List<CA> cAs = DataProvider.SCA.LayDS();
             cboMaCa.Items.Clear();
@@ -150,118 +190,116 @@ namespace NhanDatTiecCuoi.UserControls
             }
             cboMaSanh.Text = cboMaSanh.Items[0].ToString();
             txtTienDatCoc.Text = "1000000";
+            txtDonGiaBan.Text = "0";
+            List<TIECCUOI> tieccuois = DataProvider.dSTIECCUOI.LayDS();
+            HienThiMaSanh();
+            
+        }
+        private void HienThiMaSanh()
+        {
+            List<SANH> dsSanh = DataProvider.SANHs.LayDS();
+            cboMaSanh.Items.Clear();
+            foreach (SANH s in dsSanh)
+            {
+                cboMaSanh.Items.Add(s.MaSanh);
+            }
+            cboMaSanh.Text = cboMaSanh.Items[0].ToString();
+            List<TIECCUOI> tieccuois = DataProvider.dSTIECCUOI.LayDS();
+            foreach (TIECCUOI tc in tieccuois)
+            {
+                if ((DateTime.Compare(tc.NgayDaiTiec, dtpNgayDaiTiec.Value) == 0) && (tc.MaCa == cboMaCa.Text))
+                {
+                    cboMaSanh.Items.Remove(tc.MaSanh);
+
+                }
+            }
+            if (cboMaSanh.Items.Count > 0)
+            {
+                cboMaSanh.Text = cboMaSanh.Items[0].ToString();
+            }
+            else { cboMaSanh.Text = "vui lòng chọn lại"; }
         }
         private void HienThi()
         {
             HienThiDanhSachSanh();
             HienThiDanhSachCacLoaiCa();
-            HienThiDanhSachTiecCuoi();
             HienThiDanhSachChiTietDatBan("");
             HienThiDanhSachChiTietDichVu("");
             ReLoadMa();
+            HienThiDanhSachTiecCuoi();
         }
-        private void label1_Click(object sender, EventArgs e)
+        private bool InputValidate()
         {
-                    }
+            int err = 0;
+            if (string.IsNullOrEmpty(txtTenChuRe.Text))
+            {
+                epTenChuRe.SetError(txtTenChuRe, "Vui Lòng nhập tên chú rể");
+                err++;
+            }
+            else
+            {
+                epTenChuRe.SetError(txtTenChuRe, "");
+            }
+            if (string.IsNullOrEmpty(txtTenCoDau.Text))
+            {
+                epTenCoDau.SetError(txtTenCoDau, "Vui Lòng nhập tên cô dâu");
+                err++;
+            }
+            else
+            {
+                epTenCoDau.SetError(txtTenCoDau, "");
+            }
+            if (string.IsNullOrEmpty(txtSDT.Text))
+            {
+                epSDT.SetError(txtSDT, "Vui Lòng nhập số điện thoại");
+                err++;
+            }
+            else
+            {
+                epSDT.SetError(txtSDT, "");
+            }
+            if (DataProvider.StringToInt(txtTienDatCoc, epTienDatCoc) == 0)
+            {
+                err++;
+            }
+            else
+            {
+                epTienDatCoc.SetError(txtTienDatCoc, "");
+            }
+            if (DataProvider.StringToInt(txtSoBanDuTru, epSoBanDuTru) == 0)
+            {
+                err++;
+            }
+            else
+            {
+                epSoBanDuTru.SetError(txtSoBanDuTru, "");
+            }
+            if (DataProvider.StringToInt(txtSoLuongBan, epSoLuongBan) == 0)
+            {
+                err++;
+            }
+            else
+            {
+                epSoLuongBan.SetError(txtSoLuongBan, "");
+                SANH s = DataProvider.SANHs.LayThongTinTheoMa(cboMaSanh.Text);
+                if ((DataProvider.StringToInt(txtSoLuongBan, epSoLuongBan) > s.SLBanToiDa))
+                {
+                    epSoLuongBan.SetError(txtSoLuongBan, "Vượt quá số lượng bàn tối đa của sảnh");
+                    err++;
+                }
+            }
+            
+            if (err == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
 
         private void ucDatTiecCuoi_Load(object sender, EventArgs e)
         {
             HienThi();
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel5_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView4_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -281,10 +319,6 @@ namespace NhanDatTiecCuoi.UserControls
             uc.BringToFront();
         }
 
-        private void dataGridView6_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void ucDatTiecCuoi_Click(object sender, EventArgs e)
         {
@@ -328,11 +362,161 @@ namespace NhanDatTiecCuoi.UserControls
                 txtSoBanDuTru.Text = tc.SoBanDuTru.ToString();
                 txtDonGiaBan.Text = tc.DonGiaBan.ToString();
                 cboMaCa.SelectedItem = tc.MaCa;
+                HienThiMaSanh();
+                cboMaSanh.Items.Add(tc.MaSanh);
                 cboMaSanh.SelectedItem = tc.MaSanh;
+                string a = dgvTiecCuoi.Rows[e.RowIndex].Cells[1].Value.ToString();
+                HienThiDanhSachChiTietDatBan(a);
+                HienThiDanhSachChiTietDichVu(a);
             }
-            string a = dgvTiecCuoi.Rows[e.RowIndex].Cells[1].Value.ToString();
-            HienThiDanhSachChiTietDatBan(a);
-            HienThiDanhSachChiTietDichVu(a);
+        }
+
+        private void btnThemMoi_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtMaTiecCuoi.Text) != DataProvider.dSTIECCUOI.LayMaMoi())
+            {
+                epMaTiecCuoi.SetError(txtMaTiecCuoi, "Nhấn vào form để load lại mã tiệc cưới mới");
+                return;
+            }
+            else
+            {
+                epMaTiecCuoi.SetError(txtMaTiecCuoi, "");
+            }
+            if (InputValidate() == true)
+            {
+                TIECCUOI s = new TIECCUOI();
+                s.MaTiecCuoi = txtMaTiecCuoi.Text;
+                s.TenChuRe = txtTenChuRe.Text;
+                s.TenCoDau = txtTenCoDau.Text;
+                s.SDT = txtSDT.Text;
+                s.NgayDaiTiec = dtpNgayDaiTiec.Value;
+                s.NgayDatTiec = dtpNgayDatTiec.Value;
+                s.TienDatCoc = Convert.ToInt32(txtTienDatCoc.Text);
+                s.SoLuongBan = Convert.ToInt32(txtSoLuongBan.Text);
+                s.SoBanDuTru = Convert.ToInt32(txtSoBanDuTru.Text);
+                s.DonGiaBan = Convert.ToInt32(txtDonGiaBan.Text);
+                s.MaCa = cboMaCa.Text;
+                s.MaSanh = cboMaSanh.Text;
+                bool kq = DataProvider.dSTIECCUOI.ThemMoi(s);
+                if (kq == true)
+                {
+                    MessageBox.Show("Thêm mới tiệc cưới thành công");
+                    DataProvider.dSTIECCUOI.ThemMaMoi();
+                    HienThiDanhSachTiecCuoi();
+                    ReLoadMa();
+                }
+                
+            }
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtMaTiecCuoi.Text) == DataProvider.dSTIECCUOI.LayMaMoi())
+            {
+                epMaTiecCuoi.SetError(txtMaTiecCuoi, "Nhấn vào Bảng để chọn tiệc cưới cần sửa");
+                return;
+            }
+            else
+            {
+                epMaTiecCuoi.SetError(txtMaTiecCuoi, "");
+            }
+            if (InputValidate() == true)
+            {
+                TIECCUOI s = new TIECCUOI();
+                s.MaTiecCuoi = txtMaTiecCuoi.Text;
+                s.TenChuRe = txtTenChuRe.Text;
+                s.TenCoDau = txtTenCoDau.Text;
+                s.SDT = txtSDT.Text;
+                s.NgayDaiTiec = dtpNgayDaiTiec.Value;
+                s.NgayDatTiec = dtpNgayDatTiec.Value;
+                s.TienDatCoc = Convert.ToInt32(txtTienDatCoc.Text);
+                s.SoLuongBan = Convert.ToInt32(txtSoLuongBan.Text);
+                s.SoBanDuTru = Convert.ToInt32(txtSoBanDuTru.Text);
+                s.DonGiaBan = Convert.ToInt32(txtDonGiaBan.Text);
+                s.MaCa = cboMaCa.Text;
+                s.MaSanh = cboMaSanh.Text;
+                bool kq = DataProvider.dSTIECCUOI.CapNhatThongTin(s);
+                if (kq == true)
+                {
+                    MessageBox.Show("Cập nhật tiệc cưới " + txtMaTiecCuoi.Text + " thành công");
+                }
+                HienThiDanhSachTiecCuoi();
+                ReLoadMa();
+            }
+        }
+
+       
+
+        private void cboMaCa_DropDown(object sender, EventArgs e)
+        {
+            HienThiMaSanh();
+            if (Convert.ToInt32(txtMaTiecCuoi.Text) != DataProvider.dSTIECCUOI.LayMaMoi())
+            {
+                TIECCUOI tc = DataProvider.dSTIECCUOI.LayThongTinTheoMa(txtMaTiecCuoi.Text);
+                if (tc.MaCa == cboMaCa.Text)
+                {
+                    cboMaSanh.Items.Add(tc.MaSanh);
+                }
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+            if (Convert.ToInt32(txtMaTiecCuoi.Text) == DataProvider.dSTIECCUOI.LayMaMoi())
+            {
+                epMaTiecCuoi.SetError(txtMaTiecCuoi, "Nhấn vào Bảng để chọn tiệc cưới cần xóa");
+                return;
+            }
+            else
+            {
+                epMaTiecCuoi.SetError(txtMaTiecCuoi, "");
+            }
+            if (InputValidate() == true)
+            {
+                TIECCUOI tc = DataProvider.dSTIECCUOI.LayThongTinTheoMa(txtMaTiecCuoi.Text);
+                
+                if (MessageBox.Show("Bạn có muốn xóa tiệc cưới " + txtMaTiecCuoi.Text + " hay không?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    bool kq = DataProvider.dSTIECCUOI.Xoa(tc);
+
+                    if (kq == true)
+                    {
+                        List<CTDATBAN> cTDATBAN = DataProvider.dSCHITIETDATBAN.LayDSTheoMa(tc.MaTiecCuoi);
+                        if (cTDATBAN.Count != 0)
+                        {
+                            for (int i = 0; i < cTDATBAN.Count; i++)
+                            {
+                                DataProvider.dSCHITIETDATBAN.Xoa(cTDATBAN[i]);
+                            }
+                        }
+                        List<CTDATDICHVU> cTDATDICHVUs = DataProvider.dSCHITIETDATDICHVU.LayDSTheoMa(tc.MaTiecCuoi);
+                        if (cTDATDICHVUs.Count != 0)
+                        {
+                            for (int i = 0; i < cTDATDICHVUs.Count; i++)
+                            {
+                                DataProvider.dSCHITIETDATDICHVU.Xoa(cTDATDICHVUs[i]);
+                            }
+                        }
+                        MessageBox.Show("Xóa tiệc cưới " + txtMaTiecCuoi.Text + " thành công");
+                    }
+                    HienThiDanhSachTiecCuoi();
+                    HienThiDanhSachChiTietDatBan("");
+                    HienThiDanhSachChiTietDichVu("");
+                    ReLoadMa();
+                }
+
+            }
+        }
+
+        private void flowLayoutPanel5_Click(object sender, EventArgs e)
+        {
+            HienThi();
+        }
+
+        private void flowLayoutPanel7_Click(object sender, EventArgs e)
+        {
+            HienThi();
         }
     }
 }
