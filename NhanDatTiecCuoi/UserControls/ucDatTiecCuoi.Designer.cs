@@ -50,7 +50,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.label16 = new System.Windows.Forms.Label();
             this.dgvSanh = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblDanhSachTiecCuoi = new System.Windows.Forms.Label();
             this.dgvTiecCuoi = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -315,7 +315,7 @@ namespace NhanDatTiecCuoi.UserControls
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.label2);
+            this.flowLayoutPanel1.Controls.Add(this.lblDanhSachTiecCuoi);
             this.flowLayoutPanel1.Controls.Add(this.dgvTiecCuoi);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(-3, 468);
@@ -324,15 +324,16 @@ namespace NhanDatTiecCuoi.UserControls
             this.flowLayoutPanel1.TabIndex = 8;
             this.flowLayoutPanel1.Click += new System.EventHandler(this.flowLayoutPanel1_Click);
             // 
-            // label2
+            // lblDanhSachTiecCuoi
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 10);
-            this.label2.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Danh sách tiệc cưới";
+            this.lblDanhSachTiecCuoi.AutoSize = true;
+            this.lblDanhSachTiecCuoi.Location = new System.Drawing.Point(10, 10);
+            this.lblDanhSachTiecCuoi.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.lblDanhSachTiecCuoi.Name = "lblDanhSachTiecCuoi";
+            this.lblDanhSachTiecCuoi.Size = new System.Drawing.Size(148, 20);
+            this.lblDanhSachTiecCuoi.TabIndex = 0;
+            this.lblDanhSachTiecCuoi.Text = "Danh sách tiệc cưới";
+            this.lblDanhSachTiecCuoi.Click += new System.EventHandler(this.lblDanhSachTiecCuoi_Click);
             // 
             // dgvTiecCuoi
             // 
@@ -472,6 +473,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.cboMaCa.Size = new System.Drawing.Size(167, 28);
             this.cboMaCa.TabIndex = 2;
             this.cboMaCa.DropDown += new System.EventHandler(this.cboMaCa_DropDown);
+            this.cboMaCa.SelectedIndexChanged += new System.EventHandler(this.cboMaCa_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -746,7 +748,7 @@ namespace NhanDatTiecCuoi.UserControls
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvCa;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDanhSachTiecCuoi;
         private System.Windows.Forms.DataGridView dgvTiecCuoi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;

@@ -307,6 +307,7 @@ namespace NhanDatTiecCuoi.UserControls
         {
             this.Controls.Clear();
             ucThongTinChiTietDatBan uc = new ucThongTinChiTietDatBan();
+            uc.MaTiecCuoi = dgvTiecCuoi.CurrentRow.Cells[1].Value.ToString();
             this.Controls.Add(uc);
             uc.BringToFront();
         }
@@ -315,6 +316,7 @@ namespace NhanDatTiecCuoi.UserControls
         {
             this.Controls.Clear();
             ucThongTinChiTietDatDichVu uc = new ucThongTinChiTietDatDichVu();
+            uc.MaTiecCuoi = dgvTiecCuoi.CurrentRow.Cells[1].Value.ToString();
             this.Controls.Add(uc);
             uc.BringToFront();
         }
@@ -449,15 +451,15 @@ namespace NhanDatTiecCuoi.UserControls
 
         private void cboMaCa_DropDown(object sender, EventArgs e)
         {
-            HienThiMaSanh();
-            if (Convert.ToInt32(txtMaTiecCuoi.Text) != DataProvider.dSTIECCUOI.LayMaMoi())
-            {
-                TIECCUOI tc = DataProvider.dSTIECCUOI.LayThongTinTheoMa(txtMaTiecCuoi.Text);
-                if (tc.MaCa == cboMaCa.Text)
-                {
-                    cboMaSanh.Items.Add(tc.MaSanh);
-                }
-            }
+            //HienThiMaSanh();
+            //if (Convert.ToInt32(txtMaTiecCuoi.Text) != DataProvider.dSTIECCUOI.LayMaMoi())
+            //{
+            //    TIECCUOI tc = DataProvider.dSTIECCUOI.LayThongTinTheoMa(txtMaTiecCuoi.Text);
+            //    if (tc.MaCa == cboMaCa.Text)
+            //    {
+            //        cboMaSanh.Items.Add(tc.MaSanh);
+            //    }
+            //}
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -517,6 +519,27 @@ namespace NhanDatTiecCuoi.UserControls
         private void flowLayoutPanel7_Click(object sender, EventArgs e)
         {
             HienThi();
+        }
+
+        private void lblDanhSachTiecCuoi_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            ucDanhSachTiecCuoi uc = new ucDanhSachTiecCuoi();
+            this.Controls.Add(uc);
+            uc.BringToFront();
+        }
+
+        private void cboMaCa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HienThiMaSanh();
+            if (Convert.ToInt32(txtMaTiecCuoi.Text) != DataProvider.dSTIECCUOI.LayMaMoi())
+            {
+                TIECCUOI tc = DataProvider.dSTIECCUOI.LayThongTinTheoMa(txtMaTiecCuoi.Text);
+                if (tc.MaCa == cboMaCa.Text)
+                {
+                    cboMaSanh.Items.Add(tc.MaSanh);
+                }
+            }
         }
     }
 }

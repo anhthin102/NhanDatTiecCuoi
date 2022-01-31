@@ -83,8 +83,14 @@ namespace NhanDatTiecCuoi.Business
         {
             if (ds != null)
             {
-                _cTDATDICHVUs.Remove(ds);
-                return true;
+                for (int i = 0; i < _cTDATDICHVUs.Count; i++)
+                {
+                    if (ds.MaTiecCuoi == _cTDATDICHVUs[i].MaTiecCuoi && ds.MaDichVu == _cTDATDICHVUs[i].MaDichVu)
+                    {
+                        _cTDATDICHVUs.RemoveAt(i);
+                        return true;
+                    }
+                }
             }
             return false;
         }
