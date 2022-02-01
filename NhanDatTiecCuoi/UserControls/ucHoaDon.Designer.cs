@@ -29,6 +29,7 @@ namespace NhanDatTiecCuoi.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnTiecCuoi = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -64,12 +65,16 @@ namespace NhanDatTiecCuoi.UserControls
             this.txtConLai = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtThanhToan = new System.Windows.Forms.TextBox();
+            this.epThanhToan = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epMaTiecCuoi = new System.Windows.Forms.ErrorProvider(this.components);
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupSoLuongBan)).BeginInit();
             this.flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTiecCuoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epThanhToan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMaTiecCuoi)).BeginInit();
             this.SuspendLayout();
             // 
             // btnTiecCuoi
@@ -90,6 +95,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.btnCapNhat.TabIndex = 16;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // flowLayoutPanel3
             // 
@@ -443,6 +449,14 @@ namespace NhanDatTiecCuoi.UserControls
             this.txtThanhToan.Size = new System.Drawing.Size(175, 26);
             this.txtThanhToan.TabIndex = 1;
             // 
+            // epThanhToan
+            // 
+            this.epThanhToan.ContainerControl = this;
+            // 
+            // epMaTiecCuoi
+            // 
+            this.epMaTiecCuoi.ContainerControl = this;
+            // 
             // ucHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -469,6 +483,8 @@ namespace NhanDatTiecCuoi.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epThanhToan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMaTiecCuoi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,5 +527,7 @@ namespace NhanDatTiecCuoi.UserControls
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtConLai;
         private System.Windows.Forms.TextBox txtThanhToan;
+        private System.Windows.Forms.ErrorProvider epThanhToan;
+        private System.Windows.Forms.ErrorProvider epMaTiecCuoi;
     }
 }

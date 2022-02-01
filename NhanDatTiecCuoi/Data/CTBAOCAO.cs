@@ -8,6 +8,10 @@ namespace NhanDatTiecCuoi.Data
 {
     public class CTBAOCAO
     {
+        public CTBAOCAO()
+        {
+
+        }
         private string _MaBaoCao = "";
         public string MaBaoCao
         {
@@ -22,6 +26,6 @@ namespace NhanDatTiecCuoi.Data
         }
         public int SLTiecCuoi { get; set; }
         public int DoanhThu { get; set; }
-        public int TiLe { get; set; }
+        public float TiLe { get; set; }
     }
 }

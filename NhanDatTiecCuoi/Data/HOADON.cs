@@ -8,6 +8,10 @@ namespace NhanDatTiecCuoi.Data
 {
     public class HOADON
     {
+        public HOADON()
+        {
+
+        }
         private string _MaHoaDon = "";
         public string MaHoaDon
         {

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using NhanDatTiecCuoi.Data;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -13,6 +15,32 @@ namespace NhanDatTiecCuoi
     {
         public Converter()
         {
+
+        }
+        public void ChangeGridTiecCuoiColor(DataGridView dataGridView)
+        {
+            List<HOADON> hOADONs = DataProvider.dSHOADON.LayDS();
+            if (hOADONs.Count != 0)
+            {
+
+                foreach (DataGridViewRow row in dataGridView.Rows)
+                {
+                    if (row.Index >= 0 && row.Index < dataGridView.RowCount - 1)
+                        foreach (HOADON h in hOADONs)
+                        {
+                            if (row.Cells[1].Value.ToString() == h.MaTiecCuoi)
+                            {
+                                row.DefaultCellStyle.BackColor = Color.AliceBlue;
+                                if (h.ConLai == 0)
+                                {
+                                    row.DefaultCellStyle.BackColor = Color.PaleGreen;
+                                }
+                                break;
+                            }
+                        }
+
+                }
+            }
 
         }
         public int StringToInt(TextBox textBox, ErrorProvider ep)

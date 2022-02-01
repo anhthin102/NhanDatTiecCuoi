@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace NhanDatTiecCuoi.UserControls
@@ -31,7 +32,7 @@ namespace NhanDatTiecCuoi.UserControls
             DataTable data = converter.AutoNumberedTable(dt);
             dgvTiecCuoi.DataSource = null;
             dgvTiecCuoi.DataSource = data;
-            
+            converter.ChangeGridTiecCuoiColor(dgvTiecCuoi);
             if (!string.IsNullOrEmpty(_MaTiecCuoi))
             {
                 int index = 0;
@@ -136,6 +137,15 @@ namespace NhanDatTiecCuoi.UserControls
                 txtMaTiecCuoi.Text = tc.MaTiecCuoi;
                 txtTenChuRe.Text = tc.TenChuRe;
                 txtTenCoDau.Text = tc.TenCoDau;
+                HOADON hOADON = DataProvider.dSHOADON.LayThongTinTheoMa(txtMaTiecCuoi.Text);
+                if (hOADON != null)
+                {
+                    dtpNgayThanhToan.Value = hOADON.NgayThanhToan;
+                }
+                else
+                {
+                    dtpNgayThanhToan.Value = DateTime.Now;
+                }
                 nupSoLuongBan.Value = tc.SoLuongBan;
                 txtDonGiaBan.Text = tc.DonGiaBan.ToString();
                 txtTongTienBan.Text = (tc.DonGiaBan * tc.SoLuongBan).ToString();
@@ -157,8 +167,42 @@ namespace NhanDatTiecCuoi.UserControls
                 _MaTiecCuoi = txtMaTiecCuoi.Text;
             }
         }
-
-        private void flowLayoutPanel4_Click(object sender, EventArgs e)
+        private bool InputValidate()
+        {
+            int err = 0;
+            if (string.IsNullOrEmpty(txtMaTiecCuoi.Text))
+            {
+                epMaTiecCuoi.SetError(txtMaTiecCuoi, "Vui lòng chọn");
+                err++;
+            }
+            else
+            {
+                epMaTiecCuoi.SetError(txtMaTiecCuoi, "");
+            }
+            //if (DataProvider.StringToInt(txtThanhToan, epThanhToan) == 0)
+            //{
+            //    err++;
+            //}
+            //else
+            //{
+                
+            //    if(DataProvider.StringToInt(txtThanhToan, epThanhToan) > Convert.ToInt32(txtConLai.Text))
+            //    {
+            //        epThanhToan.SetError(txtThanhToan, "Số tiền thanh toán lớn hơn số tiền còn lại");
+            //        err++;
+            //    }
+            //    else
+            //    {
+            //        epThanhToan.SetError(txtThanhToan, "");
+            //    }
+            //}
+            if (err == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+            private void flowLayoutPanel4_Click(object sender, EventArgs e)
         {
             HienThi();
         }
@@ -185,6 +229,56 @@ namespace NhanDatTiecCuoi.UserControls
             uc.MaTiecCuoi = txtMaTiecCuoi.Text;
             this.Controls.Add(uc);
             uc.BringToFront();
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            
+            if (InputValidate() == true)
+            {
+                if (DataProvider.StringToInt(txtThanhToan, epThanhToan) > Convert.ToInt32(txtConLai.Text))
+                {
+                    epThanhToan.SetError(txtThanhToan, "Số tiền thanh toán lớn hơn số tiền còn lại");
+                }
+                else
+                {
+                    epThanhToan.SetError(txtThanhToan, "");
+                }
+                HOADON hOADON = new HOADON();
+                hOADON.MaHoaDon = txtMaTiecCuoi.Text;
+                hOADON.MaTiecCuoi = txtMaTiecCuoi.Text;
+                hOADON.NgayThanhToan = dtpNgayThanhToan.Value;
+                hOADON.SoLuongBan = (int)nupSoLuongBan.Value;
+                hOADON.TongTienBan = Convert.ToInt32(txtTongTienBan.Text);
+                hOADON.TongTienDichVu = Convert.ToInt32(txtTongTienDichVu.Text);
+                hOADON.TongTienHoaDon = Convert.ToInt32(txtTongTienHoaDon.Text);
+                int conlai = Convert.ToInt32(txtConLai.Text);
+                hOADON.ConLai = conlai - DataProvider.StringToInt(txtThanhToan, epThanhToan);
+                int tiendatcoc = Convert.ToInt32(txtTienDatCoc.Text)+ DataProvider.StringToInt(txtThanhToan, epThanhToan);
+                TIECCUOI tIECCUOI = DataProvider.dSTIECCUOI.LayThongTinTheoMa(txtMaTiecCuoi.Text);
+                tIECCUOI.TienDatCoc = tiendatcoc;
+                DataProvider.dSTIECCUOI.CapNhatThongTin(tIECCUOI);
+                epThanhToan.SetError(txtThanhToan, "");
+                HOADON kt = DataProvider.dSHOADON.LayThongTinTheoMa(hOADON.MaHoaDon);
+                if(kt == null)
+                {
+                    bool kq = DataProvider.dSHOADON.ThemMoi(hOADON);
+                    if (kq == true)
+                    {
+                        MessageBox.Show("Thêm mới hóa đơn " + txtMaTiecCuoi.Text + " thành công");
+                    }
+                    HienThiDanhSachTiecCuoi();
+                }
+                else
+                {
+                    bool kq = DataProvider.dSHOADON.CapNhatThongTin(hOADON);
+                    if (kq == true)
+                    {
+                        MessageBox.Show("Cập nhật hóa đơn " + txtMaTiecCuoi.Text + " thành công");
+                    }
+                    HienThiDanhSachTiecCuoi();
+                }
+            }
         }
     }
 }

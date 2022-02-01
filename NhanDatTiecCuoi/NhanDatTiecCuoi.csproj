@@ -50,6 +50,7 @@
     <Compile Include="Business\DSCHITIETDATBAN.cs" />
     <Compile Include="Business\DSCHITIETDATDICHVU.cs" />
     <Compile Include="Business\DSDICHVU.cs" />
+    <Compile Include="Business\DSHOADON.cs" />
     <Compile Include="Business\DSLOAISANH.cs" />
     <Compile Include="Business\DSMONAN.cs" />
     <Compile Include="Business\DSSANH.cs" />

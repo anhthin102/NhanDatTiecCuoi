@@ -72,6 +72,7 @@ namespace NhanDatTiecCuoi.UserControls
             DataTable data = converter.AutoNumberedTable(dt);
             dgvTiecCuoi.DataSource = null;
             dgvTiecCuoi.DataSource = data;
+            converter.ChangeGridTiecCuoiColor(dgvTiecCuoi);
             //dgvTiecCuoi.Columns[5].DefaultCellStyle.Format = "dd/MM/yyyy";
             if (!string.IsNullOrEmpty(_MaTiecCuoi))
             {

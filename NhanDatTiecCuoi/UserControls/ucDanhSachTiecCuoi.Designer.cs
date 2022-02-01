@@ -71,6 +71,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm tiệc cưới";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnTimKiem
             // 
@@ -173,6 +174,7 @@ namespace NhanDatTiecCuoi.UserControls
             this.Name = "ucDanhSachTiecCuoi";
             this.Size = new System.Drawing.Size(1074, 940);
             this.Load += new System.EventHandler(this.ucDanhSachTiecCuoi_Load);
+            this.Click += new System.EventHandler(this.ucDanhSachTiecCuoi_Click);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTiecCuoi)).EndInit();

@@ -11,6 +11,18 @@ namespace NhanDatTiecCuoi
 {
     public class DataProvider
     {
+        private static DSHOADON _dSHOADON = null;
+        public static DSHOADON dSHOADON
+        {
+            get
+            {
+                if (_dSHOADON == null)
+                {
+                    _dSHOADON = new DSHOADON();
+                }
+                return _dSHOADON;
+            }
+        }
         private static DSCHITIETDATDICHVU _dSCHITIETDATDICHVU = null;
         public static DSCHITIETDATDICHVU dSCHITIETDATDICHVU
         {

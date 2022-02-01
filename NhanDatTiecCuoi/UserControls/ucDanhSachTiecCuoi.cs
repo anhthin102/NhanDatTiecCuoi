@@ -25,7 +25,7 @@ namespace NhanDatTiecCuoi.UserControls
             DataTable data = converter.AutoNumberedTable(dt);
             dgvTiecCuoi.DataSource = null;
             dgvTiecCuoi.DataSource = data;
-
+            converter.ChangeGridTiecCuoiColor(dgvTiecCuoi);
         }
         private void ucDanhSachTiecCuoi_Load(object sender, EventArgs e)
         {
@@ -92,6 +92,16 @@ namespace NhanDatTiecCuoi.UserControls
             uc.MaTiecCuoi = dgvTiecCuoi.CurrentRow.Cells[1].Value.ToString();
             this.Controls.Add(uc);
             uc.BringToFront();
+        }
+
+        private void ucDanhSachTiecCuoi_Click(object sender, EventArgs e)
+        {
+            HienThiDanhSachTiecCuoi();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+            HienThiDanhSachTiecCuoi();
         }
     }
 }
